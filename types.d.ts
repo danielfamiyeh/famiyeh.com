@@ -11,5 +11,11 @@ export type Experience = {
 export type Project = Omit<Experience, "logo", "employer"> & {
   images: string[];
   subtitle: string;
-  links: { site: string; url: string }[];
+  links: ExternalLink[];
+};
+
+export type ExternalLink = {
+  site: string;
+  url: string;
+  icon?: string;
 };
