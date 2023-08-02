@@ -1,19 +1,7 @@
 import Image from "next/image";
 
-import { Experience } from "@/types";
 import { fonts } from "@/utils/fonts";
-
-const experiences: Experience[] = [
-  {
-    title: "Full-stack Developer",
-    employer: "Podaris",
-    description: ["test asdfasdf safdasdf asdfasfd", "test", "test", "test"],
-    skills: ["MeteorJS", "Blaze", "NodeJS", "Python", "Docker"],
-    logo: "/logos/podaris.png",
-    startDate: new Date("2023/02/01"),
-    endDate: new Date("2023/08/18"),
-  },
-];
+import { experiences } from "@/data/experience";
 
 const imgClassNames = [
   "rounded-xl",
@@ -49,6 +37,7 @@ export default function Experiences() {
                     className={`w-[128px] h-[128px] flex items-center justify-center mr-12 ${imgClassNames[i]}`}
                   >
                     <Image
+                      className="rounded-md"
                       alt={`${employer}-logo`}
                       src={logo}
                       width={128}
@@ -71,7 +60,7 @@ export default function Experiences() {
                   {description.map((description) => (
                     <p
                       key={`${employer}-${description}`}
-                      className="text-center"
+                      className="text-center mt-2"
                     >
                       {description}
                     </p>
@@ -83,7 +72,7 @@ export default function Experiences() {
               <ul className="flex justify-center">
                 {skills.map((skill) => (
                   <li key={`${employer}-skill-${skill}`} className="mr-4">
-                    {skill}
+                    <small className="font-bold">{skill}</small>
                   </li>
                 ))}
               </ul>
