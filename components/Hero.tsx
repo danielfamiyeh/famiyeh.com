@@ -13,16 +13,21 @@ export default function Hero() {
       </div>
 
       <div className="mt-4 flex flex-col">
-        <div className="flex">
-          <div className="text-white w-7/12 bg-[#131313] p-20 rounded-b-[4rem] rounded-tl-[4rem]">
+        <div className="flex flex-col lg:flex-row">
+          <div className="text-white lg:w-7/12 bg-[#131313] p-20 rounded-b-[4rem] rounded-tl-[4rem] mb-2">
             <div className="bg-slate-200 h-px w-12 mb-4 mt-24" />
-            Embrace the power of simplicity with the Bauhaus minimalist web
-            developer portfolio. Showcasing skills and projects in a clean,
-            functional, and modern style
+            Coding the Future: Igniting Ideas, Transforming Visions, and
+            Crafting Digital Solutions with Innovation and Passion
           </div>
 
-          <div className="w-1/12" />
-          <div className="w-4/12 bg-[#131313] p-20 rounded-tr-[10rem] rounded-bl-[10rem]" />
+          <div className="lg:w-1/12" />
+          <div className="lg:w-4/12 bg-[#131313] p-20 rounded-tr-[10rem] rounded-bl-[10rem]" />
+        </div>
+
+        <div className="flex flex-col lg:flex-row mt-4">
+          <div className="lg:w-4/12 bg-[#131313] p-32 rounded-r-[8rem] rounded-tl-[8rem]" />
+          <div className="lg:w-1/12" />
+          <div className="lg:w-7/12 bg-[#131313] rounded-[8rem]" />
         </div>
       </div>
     </div>
