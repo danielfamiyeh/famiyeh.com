@@ -2,9 +2,9 @@ const pages = [{ title: "Projects" }, { title: "About" }, { title: "Contact" }];
 
 export default function Navbar() {
   return (
-    <nav className="flex justify-between w-full mb-4">
-      <div className="select-none">Daniel Famiyeh</div>
-      <ul className="flex">
+    <nav className="flex justify-center lg:justify-between items-center py-4 w-full">
+      <div className="select-none hidden lg:block">Daniel Famiyeh</div>
+      <ul className="flex flex-col lg:flex-row text-center">
         {pages.map(({ title }) => (
           <li
             key={`nav-link-${title}`}
