@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Main from "@/components/Main";
 import Navbar from "@/components/Navbar";
@@ -14,6 +15,7 @@ export default function Home() {
       <div className="min-h-screen w-full bg-[#1D2D44] px-4 lg:px-48 pb-16">
         <Main />
       </div>
+      <Footer />
     </main>
   );
 }
