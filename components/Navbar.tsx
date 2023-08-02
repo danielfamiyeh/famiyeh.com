@@ -2,7 +2,7 @@ const pages = [{ title: "Projects" }, { title: "About" }, { title: "Contact" }];
 
 export default function Navbar() {
   return (
-    <nav className="flex justify-between w-full">
+    <nav className="flex justify-between w-full mb-4">
       <div className="select-none">Daniel Famiyeh</div>
       <ul className="flex">
         {pages.map(({ title }) => (
