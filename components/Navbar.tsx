@@ -1,4 +1,9 @@
-const pages = [{ title: "About" }, { title: "Projects" }, { title: "Contact" }];
+const pages = [
+  { title: "About" },
+  { title: "Experience" },
+  { title: "Projects" },
+  { title: "Contact" },
+];
 
 export default function Navbar() {
   return (
