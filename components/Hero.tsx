@@ -5,7 +5,7 @@ const climateCrisis = Climate_Crisis({ subsets: ["latin"] });
 
 export default function Hero() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col max-w-[1000px] mx-auto">
       <div
         className={`text-center lg:text-8xl md:text-6xl text-4xl border-2 border-black rounded-3xl select-none py-4 ${climateCrisis.className}`}
       >
@@ -14,7 +14,7 @@ export default function Hero() {
 
       <div className="mt-4 flex flex-col">
         <div className="flex flex-col lg:flex-row">
-          <div className="text-white lg:w-7/12 bg-[#131313] p-20 rounded-b-[4rem] rounded-tl-[4rem] mb-2">
+          <div className="text-white lg:w-7/12 bg-[#131313] p-20 rounded-b-[4rem] rounded-tl-[4rem] mb-2 select-none">
             <div className="bg-slate-200 h-px w-12 mb-4 mt-24" />
             Coding the Future: Igniting Ideas, Transforming Visions, and
             Crafting Digital Solutions with Innovation and Passion
