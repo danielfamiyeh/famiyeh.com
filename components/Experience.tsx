@@ -65,9 +65,9 @@ export default function Experiences() {
               </div>
 
               <hr className="my-3" />
-              <ul className="flex justify-center">
+              <ul className="flex flex-wrap justify-center">
                 {skills.map((skill) => (
-                  <li key={`${employer}-skill-${skill}`} className="mr-4">
+                  <li key={`${employer}-skill-${skill}`} className="mx-2">
                     <small className="font-bold">{skill}</small>
                   </li>
                 ))}

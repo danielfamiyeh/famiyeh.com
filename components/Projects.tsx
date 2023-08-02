@@ -23,7 +23,7 @@ export default function Projects() {
                 <p className="m-0 text-2xl">{title}</p>
                 <small>{subtitle}</small>
                 <hr className="my-4" />
-                <ul className="flex justify-center">
+                <ul className="flex flex-wrap justify-center">
                   {skills.map((skill: string) => (
                     <li key={`${title}-skill-${skill}`} className="mx-2">
                       <small className="font-bold">{skill}</small>
