@@ -11,7 +11,7 @@ export default function Home() {
       <div className="px-4 lg:px-48 min-h-screen pt-32 lg:pt-16 pb-16 bg-[#f0ebd8]">
         <Hero />
       </div>
-      <div className="min-h-screen w-full bg-[#1D2D44] px-4 lg:px-48">
+      <div className="min-h-screen w-full bg-[#1D2D44] px-4 lg:px-48 pb-16">
         <Main />
       </div>
     </main>

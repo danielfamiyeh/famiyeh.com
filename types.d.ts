@@ -1,5 +1,9 @@
-export type Project = {
+export type Experience = {
   title: string;
-  description: string;
-  image?: string;
+  logo: string;
+  employer: string;
+  description: string[];
+  skills: string[];
+  startDate: Date;
+  endDate?: Date;
 };
