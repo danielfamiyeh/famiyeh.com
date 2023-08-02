@@ -32,7 +32,7 @@ export default function Experiences() {
               className="p-4 pr-12 bg-[#253956] rounded-md mb-4 text-white select-none"
             >
               <div>
-                <div className="flex items-center justify-center">
+                <div className="flex items-center justify-center mb-4">
                   <div
                     className={`w-[128px] h-[128px] flex items-center justify-center mr-12 ${imgClassNames[i]}`}
                   >
