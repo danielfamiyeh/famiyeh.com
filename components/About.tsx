@@ -16,7 +16,7 @@ export default function About() {
         </div>
         <div className="lg:w-2/12"></div>
         <div className="lg:w-6/12 text-center lg:text-left">
-          <h1 className={`${fonts.title.className} text-[#f0ebd8] text-6xl`}>
+          <h1 className={`${fonts.title.className} text-[#eeeeee] text-6xl`}>
             Welcome!
           </h1>
           <p className="text-white mt-4">
