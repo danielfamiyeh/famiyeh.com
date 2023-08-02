@@ -1,9 +1,8 @@
-const pages = [{ title: "Projects" }, { title: "About" }, { title: "Contact" }];
+const pages = [{ title: "About" }, { title: "Projects" }, { title: "Contact" }];
 
 export default function Navbar() {
   return (
-    <nav className="flex justify-center lg:justify-between items-center py-4 w-full">
-      <div className="select-none hidden lg:block">Daniel Famiyeh</div>
+    <nav className="flex justify-center items-center py-4 w-full">
       <ul className="flex flex-col lg:flex-row text-center">
         {pages.map(({ title }) => (
           <li
