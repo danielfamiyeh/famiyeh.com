@@ -2,17 +2,13 @@ import Image from "next/image";
 
 import { fonts } from "@/utils/fonts";
 import { experiences } from "@/data/experience";
+import { dateFormatter } from "@/utils/constants";
 
 const imgClassNames = [
   "rounded-xl",
   "rounded-tr-[3rem] rounded-bl-[3rem]",
   "rounded-full",
 ];
-
-const dateFormatter = new Intl.DateTimeFormat("en-GB", {
-  month: "2-digit",
-  year: "numeric",
-});
 
 export default function Experiences() {
   return (
@@ -28,7 +24,7 @@ export default function Experiences() {
             i
           ) => (
             <li
-              key={`experience-${title}`}
+              key={`experience-${title}-employer`}
               className="p-4 pr-12 bg-[#253956] rounded-md mb-4 text-white select-none"
             >
               <div>
