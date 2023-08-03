@@ -1,9 +1,13 @@
-import { fonts } from "@/utils/fonts";
+"use client";
 
-export default function Hero() {
+import { fonts } from "@/utils/fonts";
+import { MutableRefObject } from "react";
+
+export default function Hero({ heroTitleRef }: HeroProps) {
   return (
     <div className="flex flex-col max-w-[1000px] mx-auto">
       <div
+        ref={heroTitleRef}
         className={`text-center lg:text-8xl md:text-6xl text-4xl border-2 border-black rounded-3xl select-none py-4 ${fonts.title.className}`}
       >
         FAMIYEH
@@ -30,3 +34,7 @@ export default function Hero() {
     </div>
   );
 }
+
+type HeroProps = {
+  heroTitleRef: MutableRefObject<HTMLDivElement | null>;
+};

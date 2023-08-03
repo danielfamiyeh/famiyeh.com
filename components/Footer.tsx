@@ -1,3 +1,5 @@
+"use client";
+
 import { contactLinks } from "@/utils/contact";
 import Image from "next/image";
 import Link from "next/link";

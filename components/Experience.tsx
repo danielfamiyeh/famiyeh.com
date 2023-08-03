@@ -24,7 +24,7 @@ export default function Experiences() {
             i
           ) => (
             <li
-              key={`experience-${title}-employer`}
+              key={`${employer}-${title}-employer`}
               className="p-4 pr-12 bg-[#253956] rounded-md mb-4 text-white select-none"
             >
               <div>

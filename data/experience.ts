@@ -4,7 +4,12 @@ export const experiences: Experience[] = [
   {
     title: "Full-stack Developer",
     employer: "Podaris Limited",
-    description: ["test asdfasdf safdasdf asdfasfd", "test", "test", "test"],
+    description: [
+      "test asdfasdf safdasdf asdfasfd",
+      "teasdfst",
+      "tesasdft",
+      "tesadsfsdft",
+    ],
     skills: [
       "JavaScript ES6+",
       "Python 3",
