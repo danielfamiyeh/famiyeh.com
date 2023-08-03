@@ -1,3 +1,5 @@
+"use client";
+
 const pages = [
   { title: "About" },
   { title: "Experience" },
@@ -5,9 +7,19 @@ const pages = [
   { title: "Contact" },
 ];
 
-export default function Navbar() {
+export default function Navbar({ isHeroTitleVisible }: NavbarProps) {
   return (
-    <nav className="flex justify-center items-center py-4 w-full">
+    <nav className="flex justify-between items-center py-4 w-full">
+      <div className="flex gap-1">
+        <p className="m-0">Daniel</p>
+        <b
+          className={`transition-opacity ease-in duration-300 ${
+            isHeroTitleVisible ? "opacity-0" : "opacity-100"
+          }`}
+        >
+          Famiyeh
+        </b>
+      </div>
       <ul className="flex flex-col lg:flex-row text-center">
         {pages.map(({ title }) => (
           <li
@@ -21,3 +33,7 @@ export default function Navbar() {
     </nav>
   );
 }
+
+type NavbarProps = {
+  isHeroTitleVisible: boolean;
+};
