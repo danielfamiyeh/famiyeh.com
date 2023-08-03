@@ -20,9 +20,31 @@ export default function About() {
             Welcome!
           </h1>
           <p className="text-white mt-4">
-            Meet John Hawkins, the virtuoso behind these sleek web creations. An
-            expert in minimalism, John combines form and function to weave
-            digital dreams into reality.
+            I'm Daniel Famiyeh, a passionate software developer with a journey
+            that began in the intriguing realm of the Sony PSP homebrew scene at
+            age 11.
+          </p>
+          <p className="text-white mt-2">
+            Inspired by my new-found passion, I started developing Python
+            scripts and tinkered with JavaScript to creating 2D games using the
+            Canvas API.
+          </p>
+
+          <p className="text-white mt-2">
+            My early forays into web development through crafting Tumblr themes
+            for myself and friends sowed the seeds for a future reconnection
+            with this dynamic domain.
+          </p>
+
+          <p className="text-white mt-2">
+            Now I've had the pleasure of working with two consultancies, two
+            startups and enjoy delving into hobby projects that span different
+            fields.
+          </p>
+
+          <p className="text-white mt-2">
+            When I'm not at my desk, you can find me at the skatepark, at my
+            piano, snapping photos/filming or being with friends.
           </p>
         </div>
       </div>

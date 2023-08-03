@@ -6,8 +6,8 @@ export const experiences: Experience[] = [
     employer: "Podaris Limited",
     description: ["test asdfasdf safdasdf asdfasfd", "test", "test", "test"],
     skills: [
-      "JavaScript",
-      "Python",
+      "JavaScript ES6+",
+      "Python 3",
       "MeteorJS",
       "Blaze",
       "NodeJS",
@@ -30,11 +30,10 @@ export const experiences: Experience[] = [
     startDate: new Date("2022/10/01"),
     endDate: new Date("2023/01/31"),
     skills: [
-      "JavaScript",
+      "JavaScript ES6+",
       "TypeScript",
       "React Native",
       "MongoDB",
-
       "NodeJS",
       "Heroku",
       "Amazon Web Services (AWS)",
@@ -53,7 +52,7 @@ export const experiences: Experience[] = [
     startDate: new Date("2021/10/01"),
     endDate: new Date("2022/09/30"),
     skills: [
-      "JavaScript",
+      "JavaScript ES6+",
       "TypeScript",
       "MeteorJS",
       "ReactJS",
@@ -75,6 +74,19 @@ export const experiences: Experience[] = [
     logo: "/logos/cs.png",
     startDate: new Date("2021/04/01"),
     endDate: new Date("2022/09/30"),
-    skills: ["JavaScript", "MeteorJS", "ReactJS", "Blaze", "MongoDB"],
+    skills: ["JavaScript ES6+", "MeteorJS", "ReactJS", "Blaze", "MongoDB"],
+  },
+  {
+    title: "Software Engineer",
+    employer: "Atmel Corporation",
+    description: [
+      "Architected a command-line interface (CLI) and over-the-air (OTA) testing utility for the remote control of a set-top box, streaming player.",
+      "Gained valuable experience in test-driven development, project management, and the various lifecycle phases of software development.",
+    ],
+
+    logo: "/logos/atmel.png",
+    startDate: new Date("2014/09/01"),
+    endDate: new Date("2014/10/10"),
+    skills: ["Python 2", "Git", "Internet of Things (IoT)"],
   },
 ];
