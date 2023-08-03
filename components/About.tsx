@@ -20,9 +20,9 @@ export default function About() {
             Welcome!
           </h1>
           <p className="text-white mt-4">
-            I'm Daniel Famiyeh, a passionate software developer with a journey
-            that began in the intriguing realm of the Sony PSP homebrew scene at
-            age 11.
+            I&apos;m Daniel Famiyeh, a passionate software developer with a
+            journey that began in the intriguing realm of the Sony PSP homebrew
+            scene at age 11.
           </p>
           <p className="text-white mt-2">
             Inspired by my new-found passion, I started developing Python
@@ -37,14 +37,14 @@ export default function About() {
           </p>
 
           <p className="text-white mt-2">
-            Now I've had the pleasure of working with two consultancies, two
-            startups and enjoy delving into hobby projects that span different
-            fields.
+            Now I&apos;ve had the pleasure of working with two consultancies,
+            two startups and enjoy delving into hobby projects that span
+            different fields.
           </p>
 
           <p className="text-white mt-2">
-            When I'm not at my desk, you can find me at the skatepark, at my
-            piano, snapping photos/filming or being with friends.
+            When I&apos;m not at my desk, you can find me at the skatepark, at
+            my piano, snapping photos/filming or being with friends.
           </p>
         </div>
       </div>
