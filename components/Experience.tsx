@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { MutableRefObject } from "react";
 
+import { useIntersectionObserver } from "@/utils/hooks/useIntersectionObserver";
 import { dateFormatter } from "@/utils/constants";
 import { experiences } from "@/data/experience";
 import { fonts } from "@/utils/fonts";
@@ -12,8 +13,16 @@ const imgClassNames = [
 ];
 
 export default function Experiences({ innerRef }: ExperiencesProps) {
+  const intersector = useIntersectionObserver(innerRef, {});
+  const isVisbible = intersector?.isIntersecting;
+
   return (
-    <div ref={innerRef} className="mt-16">
+    <div
+      ref={innerRef}
+      className={`mt-16 transform transition duration-1000 ease-in-out ${
+        isVisbible ? "opacity-100" : "opacity-0"
+      }`}
+    >
       <h2 className={`text-light text-4xl ${fonts.title.className} mb-4`}>
         EXPERIENCE
         <hr className="mt-1" />

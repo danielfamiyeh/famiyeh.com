@@ -1,8 +1,9 @@
 "use client";
 
-import { fonts } from "@/utils/fonts";
 import { MutableRefObject } from "react";
 
+import { fonts } from "@/utils/fonts";
+// import { useIntersectionObserver } from "@/utils/hooks/useIntersectionObserver";
 export default function Hero({ heroTitleRef }: HeroProps) {
   return (
     <div className="flex flex-col max-w-[1000px] mx-auto">

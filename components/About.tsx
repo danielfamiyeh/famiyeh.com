@@ -4,12 +4,18 @@ import { MutableRefObject } from "react";
 
 import { fonts } from "@/utils/fonts";
 import Image from "next/image";
+import { useIntersectionObserver } from "@/utils/hooks/useIntersectionObserver";
 
 export default function About({ innerRef }: AboutProps) {
+  const intersector = useIntersectionObserver(innerRef, {});
+  const isVisbible = intersector?.isIntersecting;
+
   return (
     <div
       ref={innerRef}
-      className="flex flex-col items-center lg:flex-row justify-between mb-36"
+      className={`flex flex-col items-center lg:flex-row justify-between mb-36 transform transition duration-1000 ease-in-out ${
+        isVisbible ? "opacity-100" : "opacity-0"
+      }`}
     >
       <div className="lg:w-4/12">
         <Image
