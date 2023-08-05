@@ -22,7 +22,7 @@ export default function Home() {
 
   return (
     <main>
-      <div className="px-4 lg:px-48 fixed w-full bg-[#eeeeee] ">
+      <div className="px-4 lg:px-48 fixed w-full bg-[#eeeeee] z-50">
         <Navbar
           aboutRef={aboutRef}
           contactRef={contactRef}

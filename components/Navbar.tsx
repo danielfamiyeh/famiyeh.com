@@ -20,10 +20,7 @@ export default function Navbar({
   const refs = [aboutRef, experienceRef, projectsRef, contactRef];
 
   return (
-    <nav
-      className="flex justify-between items-center py-4 lg:py-px w-full"
-      style={{ zIndex: 10 }}
-    >
+    <nav className="flex justify-between items-center py-4  lg:py-px w-full">
       <div className="flex gap-1 select-none">
         <p className="m-0">Daniel</p>
         <b
