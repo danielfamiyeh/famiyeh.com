@@ -20,11 +20,14 @@ export default function Navbar({
   const refs = [aboutRef, experienceRef, projectsRef, contactRef];
 
   return (
-    <nav className="flex justify-between items-center py-4 lg:py-px w-full">
+    <nav
+      className="flex justify-between items-center py-4 lg:py-px w-full"
+      style={{ zIndex: 10 }}
+    >
       <div className="flex gap-1 select-none">
         <p className="m-0">Daniel</p>
         <b
-          className={`transition-opacity ease-in duration-300 ${
+          className={`transition-opacity ease-in-out duration-300 ${
             isHeroTitleVisible ? "opacity-0" : "opacity-100"
           }`}
         >

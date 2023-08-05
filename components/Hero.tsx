@@ -1,11 +1,23 @@
 "use client";
 
+import { MutableRefObject, useRef } from "react";
+
+import { useIntersectionObserver } from "@/utils/hooks/useIntersectionObserver";
 import { fonts } from "@/utils/fonts";
-import { MutableRefObject } from "react";
 
 export default function Hero({ heroTitleRef }: HeroProps) {
+  const containerRef = useRef(null);
+  const intesector = useIntersectionObserver(heroTitleRef, {});
+
+  const isVisible = intesector?.isIntersecting;
+
   return (
-    <div className="flex flex-col max-w-[1000px] mx-auto">
+    <div
+      ref={containerRef}
+      className={`flex flex-col max-w-[1000px] mx-auto transform transition duration-1000 ease-in-out ${
+        isVisible ? "opacity-100" : "opacity-0"
+      }`}
+    >
       <div
         ref={heroTitleRef}
         className={`text-center lg:text-8xl md:text-6xl text-4xl border-2 border-black rounded-3xl select-none py-4 ${fonts.title.className}`}
