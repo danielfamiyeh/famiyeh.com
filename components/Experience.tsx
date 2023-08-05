@@ -1,8 +1,9 @@
 import Image from "next/image";
+import { MutableRefObject } from "react";
 
-import { fonts } from "@/utils/fonts";
-import { experiences } from "@/data/experience";
 import { dateFormatter } from "@/utils/constants";
+import { experiences } from "@/data/experience";
+import { fonts } from "@/utils/fonts";
 
 const imgClassNames = [
   "rounded-xl",
@@ -10,9 +11,9 @@ const imgClassNames = [
   "rounded-full",
 ];
 
-export default function Experiences() {
+export default function Experiences({ innerRef }: ExperiencesProps) {
   return (
-    <div className="mt-16">
+    <div ref={innerRef} className="mt-16">
       <h2 className={`text-light text-4xl ${fonts.title.className} mb-4`}>
         EXPERIENCE
         <hr className="mt-1" />
@@ -79,3 +80,7 @@ export default function Experiences() {
     </div>
   );
 }
+
+type ExperiencesProps = {
+  innerRef: MutableRefObject<HTMLDivElement | null>;
+};
