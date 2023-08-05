@@ -21,7 +21,7 @@ export default function Navbar({
 
   return (
     <nav className="flex justify-between items-center py-4 lg:py-px w-full">
-      <div className="flex gap-1">
+      <div className="flex gap-1 select-none">
         <p className="m-0">Daniel</p>
         <b
           className={`transition-opacity ease-in duration-300 ${
@@ -60,7 +60,7 @@ export default function Navbar({
           {pages.map(({ title }, i) => (
             <li
               key={`nav-link-${title}`}
-              className="mr-4 p-2 text-center select-none cursor-pointer border-t-2 lg:border-t-0"
+              className={`mr-4 p-2 text-center select-none cursor-pointer border-t-2 transition transform duration-300 ease-in-out lg:border-t-0 hover:opacity-25`}
               onClick={() => {
                 setIsOpen(false);
                 refs[i].current?.scrollIntoView({ behavior: "smooth" });
