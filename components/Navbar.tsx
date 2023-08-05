@@ -29,13 +29,25 @@ export default function Navbar({ isHeroTitleVisible }: NavbarProps) {
           className="burger lg:hidden flex flex-col gap-1 cursor-pointer"
           onClick={() => setIsOpen(!isOpen)}
         >
-          <div className="h-0.5 w-5 bg-black" />
-          <div className="h-0.5 w-5 bg-black" />
-          <div className="h-0.5 w-5 bg-black" />
+          <div
+            className={`h-0.5 w-5 bg-black transform transition duration-500 ease-in-out ${
+              isOpen ? "rotate-45 translate-y-1.5" : ""
+            }`}
+          />
+          <div
+            className={`h-0.5 w-5 bg-black transform transition duration-500 ease-in-out ${
+              isOpen ? "opacity-0" : "opacity-100"
+            }`}
+          />
+          <div
+            className={`h-0.5 w-5 bg-black transform transition duration-500 ease-in-out ${
+              isOpen ? "-rotate-45 -translate-y-1.5" : ""
+            }`}
+          />
         </div>
         <ul
           className={`flex flex-col fixed right-0 text-right mt-5 bg-[#eeeeee] w-full overflow-hidden ${
-            isOpen ? "max-h-[9999px]" : "max-h-0"
+            isOpen ? "max-h-[1000px]" : "max-h-0"
           } transition-all duration-700 ease-in-out lg:max-h-[9999px] lg:mt-0 lg:flex-row lg:relative`}
         >
           {pages.map(({ title }) => (
