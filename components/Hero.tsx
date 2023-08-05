@@ -6,8 +6,9 @@ import { useIntersectionObserver } from "@/utils/hooks/useIntersectionObserver";
 import { fonts } from "@/utils/fonts";
 
 export default function Hero({ heroTitleRef }: HeroProps) {
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const intesector = useIntersectionObserver(heroTitleRef, {});
+  const containerIntersector = useIntersectionObserver(containerRef, {});
 
   const isVisible = intesector?.isIntersecting;
 
@@ -15,7 +16,7 @@ export default function Hero({ heroTitleRef }: HeroProps) {
     <div
       ref={containerRef}
       className={`flex flex-col max-w-[1000px] mx-auto transform transition duration-1000 ease-in-out ${
-        isVisible ? "opacity-100" : "opacity-0"
+        containerIntersector?.isIntersecting ? "opacity-100" : "opacity-0"
       }`}
     >
       <div
