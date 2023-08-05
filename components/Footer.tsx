@@ -1,12 +1,14 @@
 "use client";
 
+import { MutableRefObject } from "react";
+
 import { contactLinks } from "@/utils/contact";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Footer() {
+export default function Footer({ innerRef }: FooterProps) {
   return (
-    <div className="mt-16 p-4 text-center text-[#eeeeee]">
+    <div ref={innerRef} className="mt-16 p-4 text-center text-[#eeeeee]">
       <div className="flex flex-wrap items-center justify-center">
         {contactLinks.map(({ url, site, icon }) => (
           <Link key={url} href={url} target="_blank" rel="noopener noreferrer">
@@ -22,3 +24,7 @@ export default function Footer() {
     </div>
   );
 }
+
+type FooterProps = {
+  innerRef: MutableRefObject<HTMLDivElement | null>;
+};

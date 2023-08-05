@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { MutableRefObject, useState } from "react";
 
 const pages = [
   { title: "About" },
@@ -9,8 +9,15 @@ const pages = [
   { title: "Contact" },
 ];
 
-export default function Navbar({ isHeroTitleVisible }: NavbarProps) {
+export default function Navbar({
+  isHeroTitleVisible,
+  aboutRef,
+  experienceRef,
+  projectsRef,
+  contactRef,
+}: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const refs = [aboutRef, experienceRef, projectsRef, contactRef];
 
   return (
     <nav className="flex justify-between items-center py-4 lg:py-px w-full">
@@ -50,11 +57,14 @@ export default function Navbar({ isHeroTitleVisible }: NavbarProps) {
             isOpen ? "max-h-[1000px]" : "max-h-0"
           } transition-all duration-700 ease-in-out lg:max-h-[9999px] lg:mt-0 lg:flex-row lg:relative`}
         >
-          {pages.map(({ title }) => (
+          {pages.map(({ title }, i) => (
             <li
               key={`nav-link-${title}`}
               className="mr-4 p-2 text-center select-none cursor-pointer border-t-2 lg:border-t-0"
-              onClick={() => setIsOpen(false)}
+              onClick={() => {
+                setIsOpen(false);
+                refs[i].current?.scrollIntoView({ behavior: "smooth" });
+              }}
             >
               {title}
             </li>
@@ -67,4 +77,8 @@ export default function Navbar({ isHeroTitleVisible }: NavbarProps) {
 
 type NavbarProps = {
   isHeroTitleVisible: boolean;
+  aboutRef: MutableRefObject<HTMLDivElement | null>;
+  experienceRef: MutableRefObject<HTMLDivElement | null>;
+  projectsRef: MutableRefObject<HTMLDivElement | null>;
+  contactRef: MutableRefObject<HTMLDivElement | null>;
 };

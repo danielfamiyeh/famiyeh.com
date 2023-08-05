@@ -1,11 +1,12 @@
 import Link from "next/link";
+import { MutableRefObject } from "react";
 
-import { fonts } from "@/utils/fonts";
 import { projects } from "@/data/project";
+import { fonts } from "@/utils/fonts";
 
-export default function Projects() {
+export default function Projects({ innerRef }: ProjectsProps) {
   return (
-    <div className="mt-16">
+    <div ref={innerRef} className="mt-16">
       <h2 className={`text-light text-4xl ${fonts.title.className} mb-4`}>
         PROJECTS
         <hr className="mt-1" />
@@ -51,3 +52,7 @@ export default function Projects() {
     </div>
   );
 }
+
+type ProjectsProps = {
+  innerRef: MutableRefObject<HTMLDivElement | null>;
+};
