@@ -14,9 +14,9 @@ export default function Home() {
   const heroTitleEntry = useIntersectionObserver(heroTitleRef, {});
 
   const aboutRef = useRef<HTMLDivElement | null>(null);
+  const contactRef = useRef<HTMLDivElement | null>(null);
   const projectsRef = useRef<HTMLDivElement | null>(null);
   const experienceRef = useRef<HTMLDivElement | null>(null);
-  const contactRef = useRef<HTMLDivElement | null>(null);
 
   const isHeroTitleVisible = !!heroTitleEntry?.isIntersecting;
 
