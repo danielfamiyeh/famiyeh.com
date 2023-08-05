@@ -9,13 +9,13 @@ import { contactLinks } from "@/utils/contact";
 
 export default function Footer({ innerRef }: FooterProps) {
   const intersector = useIntersectionObserver(innerRef, {});
-  const isVisbible = intersector?.isIntersecting;
+  const isVisible = intersector?.isIntersecting;
 
   return (
     <div
       ref={innerRef}
       className={`mt-16 p-4 text-center text-[#eeeeee] transform transition duration-1000 ease-in-out ${
-        isVisbible ? "opacity-100" : "opacity-0"
+        isVisible ? "opacity-100" : "opacity-0"
       }`}
     >
       <div className="flex flex-wrap items-center justify-center">

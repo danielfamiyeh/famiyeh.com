@@ -7,13 +7,13 @@ import { useIntersectionObserver } from "@/utils/hooks/useIntersectionObserver";
 
 export default function Projects({ innerRef }: ProjectsProps) {
   const intersector = useIntersectionObserver(innerRef, {});
-  const isVisbible = intersector?.isIntersecting;
+  const isVisible = intersector?.isIntersecting;
 
   return (
     <div
       ref={innerRef}
       className={`mt-16 transform transition duration-1000 ease-in-out ${
-        isVisbible ? "opacity-100" : "opacity-0"
+        isVisible ? "opacity-100" : "opacity-0"
       }`}
     >
       <h2 className={`text-light text-4xl ${fonts.title.className} mb-4`}>
