@@ -20,7 +20,7 @@ export default function Navbar({
   const refs = [aboutRef, experienceRef, projectsRef, contactRef];
 
   return (
-    <nav className="flex justify-between items-center py-4  lg:py-px w-full">
+    <nav className="flex justify-between items-center py-4 lg:py-px w-full">
       <div className="flex gap-1 select-none">
         <p className="m-0">Daniel</p>
         <b
@@ -53,7 +53,7 @@ export default function Navbar({
           />
         </div>
         <ul
-          className={`flex flex-col fixed right-0 text-right mt-5 bg-[#eeeeee] w-full overflow-hidden ${
+          className={`flex flex-col fixed right-0 text-right mt-5 bg-[#F0EBD8] w-full overflow-hidden ${
             isOpen ? "max-h-[1000px]" : "max-h-0"
           } transition-all duration-700 ease-in-out lg:max-h-[9999px] lg:mt-0 lg:flex-row lg:relative`}
         >

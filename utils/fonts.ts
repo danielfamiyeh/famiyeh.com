@@ -1,7 +1,7 @@
-import { Climate_Crisis } from "next/font/google";
+import { Gloock } from "next/font/google";
 
-const climateCrisis = Climate_Crisis({ subsets: ["latin"] });
+const gloock = Gloock({ subsets: ["latin"], weight: "400" });
 
 export const fonts = {
-  title: climateCrisis,
+  title: gloock,
 };

@@ -22,7 +22,7 @@ export default function Home() {
 
   return (
     <main>
-      <div className="px-4 lg:px-48 fixed w-full bg-[#eeeeee] z-50">
+      <div className="px-4 lg:px-48 fixed w-full bg-[#F0EBD8] z-50">
         <Navbar
           aboutRef={aboutRef}
           contactRef={contactRef}
@@ -31,7 +31,7 @@ export default function Home() {
           isHeroTitleVisible={isHeroTitleVisible}
         />
       </div>
-      <div className="px-4 lg:px-48 min-h-screen pt-32 lg:pt-16 pb-16 bg-[#eeeeee]">
+      <div className="px-4 lg:px-48 min-h-screen pt-32 lg:pt-16 pb-16 bg-[#F0EBD8]">
         <Hero heroTitleRef={heroTitleRef} />
       </div>
       <div className="min-h-screen w-full bg-[#1D2D44] px-4 lg:px-48 pb-16">

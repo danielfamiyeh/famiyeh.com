@@ -42,13 +42,14 @@ export default function Projects({ innerRef }: ProjectsProps) {
                 ))}
               </ul>
 
-              <ul>
+              <ul className="mt-5 flex flex-wrap gap-4 text-sm underline">
                 {links.map(({ site, url }: { site: string; url: string }) => (
                   <Link
                     key={url}
                     href={url}
                     target="_blank"
                     rel="noreferrer noopener"
+                    className={`transition-opacity ease-in-out duration-300 hover:opacity-25`}
                   >
                     {site}
                   </Link>
