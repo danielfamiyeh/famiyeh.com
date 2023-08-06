@@ -5,10 +5,9 @@ export const experiences: Experience[] = [
     title: "Full-stack Developer",
     employer: "Podaris Limited",
     description: [
-      "test asdfasdf safdasdf asdfasfd",
-      "teasdfst",
-      "tesasdft",
-      "tesadsfsdft",
+      "Architected and built a standalone authentication service using TypeScript with extensive test coverage. The service exposed an HTTP interface for communication with the existing single-tenant systems and implemented batch processing workflows for maintaining consistency with the distributed systems.",
+      "Engineered a solution for users to extract geographic locations, spanning both the user-facing interface and code within a Python service. This streamlined the process of refining a GTFS feed, retaining only relevant services within the specified geographic region, enhancing overall system efficiency.",
+      "Created a versatile user-search input component allowing single/multiple selection of existing users within a tenant's database. Employing a blend of matching techniques, the component ensures accurate results for names, usernames, and emails. Furthermore, the component's functionality includes secure background invitations for unmatched email entries by authorized users.",
     ],
     skills: [
       "JavaScript ES6+",
