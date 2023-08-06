@@ -7,10 +7,7 @@ import { fonts } from "@/utils/fonts";
 
 export default function Hero({ heroTitleRef }: HeroProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const intesector = useIntersectionObserver(heroTitleRef, {});
   const containerIntersector = useIntersectionObserver(containerRef, {});
-
-  const isVisible = intesector?.isIntersecting;
 
   return (
     <div
