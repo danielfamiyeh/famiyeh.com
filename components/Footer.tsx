@@ -18,11 +18,15 @@ export default function Footer({ innerRef }: FooterProps) {
         isVisible ? "opacity-100" : "opacity-0"
       }`}
     >
-      <div className="flex flex-wrap items-center justify-center">
-        {contactLinks.map(({ url, site, icon }) => (
+      <div className="flex flex-wrap items-center justify-center mb-2">
+        {contactLinks.map(({ url, site, Icon }) => (
           <Link key={url} href={url} target="_blank" rel="noopener noreferrer">
-            {icon ? (
-              <Image src={icon} width={48} height={48} alt={`${site} link`} />
+            {Icon ? (
+              <Icon
+                class="invert hover:opacity-50 transform transition duration-300 ease-in-out"
+                width={50}
+                height={50}
+              />
             ) : (
               site
             )}

@@ -1,3 +1,5 @@
+import { Component } from "react";
+
 export type Experience = {
   title: string;
   logo: string;
@@ -17,5 +19,5 @@ export type Project = Omit<Experience, "logo", "employer"> & {
 export type ExternalLink = {
   site: string;
   url: string;
-  icon?: string;
+  Icon?: typeof Component;
 };
