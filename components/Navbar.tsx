@@ -53,14 +53,14 @@ export default function Navbar({
           />
         </div>
         <ul
-          className={`flex flex-col fixed right-0 text-right mt-5 bg-[#F0EBD8] w-full overflow-hidden ${
+          className={`flex flex-col fixed right-0 text-right mt-5 bg-[#D4D4D4] w-full overflow-hidden ${
             isOpen ? "max-h-[1000px]" : "max-h-0"
           } transition-all duration-700 ease-in-out lg:max-h-[9999px] lg:mt-0 lg:flex-row lg:relative`}
         >
           {pages.map(({ title }, i) => (
             <li
               key={`nav-link-${title}`}
-              className={`mr-4 p-2 text-center select-none cursor-pointer border-t-2 transition transform duration-300 ease-in-out lg:border-t-0 hover:opacity-25`}
+              className={`p-2 text-center select-none cursor-pointer border-t-[1px] transition transform duration-300 ease-in-out lg:border-t-0 hover:opacity-25`}
               onClick={() => {
                 setIsOpen(false);
                 refs[i].current?.scrollIntoView({ behavior: "smooth" });
