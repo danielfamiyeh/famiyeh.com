@@ -17,5 +17,5 @@ export type Project = Omit<Experience, "logo", "employer"> & {
 export type ExternalLink = {
   site: string;
   url: string;
-  icon?: string;
+  Icon?: Function;
 };

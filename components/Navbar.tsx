@@ -6,7 +6,7 @@ const pages = [
   { title: "About" },
   { title: "Experience" },
   { title: "Projects" },
-  { title: "Contact" },
+  // { title: "Contact" },
 ];
 
 export default function Navbar({
