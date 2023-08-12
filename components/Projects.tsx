@@ -1,34 +1,20 @@
 import Link from "next/link";
-import { MutableRefObject, useEffect, useState } from "react";
+import { MutableRefObject } from "react";
 
 import { useIntersectionObserver } from "@/utils/hooks/useIntersectionObserver";
+import { useDatabaseData } from "@/utils/hooks/useDatabaseData";
 import { getProjectsAction } from "@/app/_actions";
-import { fonts } from "@/utils/fonts";
-import { FetchedData } from "@/type";
 import { Project } from "@/models/Project";
+import { fonts } from "@/utils/fonts";
 
 export default function Projects({ innerRef }: ProjectsProps) {
   const intersector = useIntersectionObserver(innerRef, {});
   const isVisible = intersector?.isIntersecting;
 
-  const [projects, setProjects] = useState<FetchedData<Project>>({
-    fetched: false,
-    error: null,
-    data: [],
+  const projects = useDatabaseData<Project>({
+    getAction: getProjectsAction,
+    key: "projects",
   });
-
-  useEffect(() => {
-    const init = async () => {
-      try {
-        const res = await getProjectsAction();
-        setProjects({ ...projects, fetched: true, data: res.projects });
-      } catch (error: any) {
-        setProjects({ ...projects, error: error.message, fetched: true });
-      }
-    };
-
-    init();
-  }, []);
 
   return (
     <div
@@ -42,7 +28,7 @@ export default function Projects({ innerRef }: ProjectsProps) {
         <hr className="mt-1" />
       </h2>
       <ul className="flex flex-wrap flex-col lg:flex-row gap-4 justify-center text-white">
-        {projects.data.map(({ title, subtitle, skills, links }, i) => {
+        {projects?.data?.map(({ title, subtitle, skills, links }, i) => {
           return (
             <li
               key={`project-${title}`}
