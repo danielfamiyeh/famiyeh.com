@@ -23,9 +23,9 @@ export default function Footer({ innerRef }: FooterProps) {
           <Link key={url} href={url} target="_blank" rel="noopener noreferrer">
             {Icon ? (
               <Icon
-                className="invert hover:opacity-50 transform transition duration-300 ease-in-out"
-                width={50}
+                className="hover:opacity-50 transform transition duration-300 ease-in-out"
                 height={50}
+                width={50}
               />
             ) : (
               site
