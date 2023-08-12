@@ -61,7 +61,7 @@ export default function ProjectArchive() {
               return (
                 <tr
                   key={`project-${id}`}
-                  className="flex flex-col text-center bg-[#253956] pt-4 rounded-md lg:table-row lg:text-left lg:border-t lg:border-[#4a6182]"
+                  className="flex flex-col text-center mt-2 bg-[#253956] pt-4 rounded-md lg:table-row lg:text-left lg:border-t lg:border-[#4a6182]"
                 >
                   <td className="px-4 py-2">
                     <b>{project.title}</b>
