@@ -88,7 +88,7 @@ export default function ProjectArchive() {
                         <Link key={link.url} href={link.url}>
                           <Icon
                             key={`project-${id}-link${link.site}`}
-                            className="invert"
+                            className="fill-white"
                             height={24}
                             width={24}
                           />
