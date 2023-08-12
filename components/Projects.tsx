@@ -79,7 +79,7 @@ export default function Projects({ innerRef }: ProjectsProps) {
                         rel="noreferrer noopener"
                         className={`transition-opacity ease-in-out duration-300 hover:opacity-25`}
                       >
-                        <Icon className="fill-white" width={36} height={36} />
+                        <Icon width={36} height={36} />
                       </Link>
                     );
                   })}
