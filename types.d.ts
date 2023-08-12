@@ -3,6 +3,7 @@ import { Component } from "react";
 export type Experience = {
   title: string;
   logo: string;
+  logoBg?: boolean;
   employer: string;
   description: string[];
   skills: string[];
