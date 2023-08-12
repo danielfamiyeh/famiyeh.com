@@ -1,6 +1,6 @@
-import { Project } from "@/models/Project";
+import { ProjectClass } from "@/models/Project";
 
-export const projects: Project[] = [
+export const projects: ProjectClass[] = [
   {
     title: "Solidus",
     subtitle: "Social network dApp built with Solidity, NextJS and TailwindCSS",
