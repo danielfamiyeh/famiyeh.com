@@ -1,13 +1,34 @@
 import Link from "next/link";
-import { MutableRefObject } from "react";
+import { MutableRefObject, useEffect, useState } from "react";
 
-import { fonts } from "@/utils/fonts";
-import { projects } from "@/data/project";
 import { useIntersectionObserver } from "@/utils/hooks/useIntersectionObserver";
+import { getProjectsAction } from "@/app/_actions";
+import { fonts } from "@/utils/fonts";
+import { FetchedData } from "@/type";
+import { Project } from "@/models/Project";
 
 export default function Projects({ innerRef }: ProjectsProps) {
   const intersector = useIntersectionObserver(innerRef, {});
   const isVisible = intersector?.isIntersecting;
+
+  const [projects, setProjects] = useState<FetchedData<Project>>({
+    fetched: false,
+    error: null,
+    data: [],
+  });
+
+  useEffect(() => {
+    const init = async () => {
+      try {
+        const res = await getProjectsAction();
+        setProjects({ ...projects, fetched: true, data: res.projects });
+      } catch (error: any) {
+        setProjects({ ...projects, error: error.message, fetched: true });
+      }
+    };
+
+    init();
+  }, []);
 
   return (
     <div
@@ -21,7 +42,7 @@ export default function Projects({ innerRef }: ProjectsProps) {
         <hr className="mt-1" />
       </h2>
       <ul className="flex flex-wrap flex-col lg:flex-row gap-4 justify-center text-white">
-        {projects.map(({ title, subtitle, skills, links }, i) => {
+        {projects.data.map(({ title, subtitle, skills, links }, i) => {
           return (
             <li
               key={`project-${title}`}

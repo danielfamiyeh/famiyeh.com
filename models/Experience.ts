@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 import { prop, getModelForClass } from "@typegoose/typegoose";
 
-export class ExperienceClass {
-  @prop({ required: true, unique: true })
+export class Experience {
+  @prop({ required: true })
   public title!: string;
 
   @prop({ required: true })
@@ -21,11 +21,11 @@ export class ExperienceClass {
   skills!: string[];
 
   @prop({ required: true })
-  startDate!: Date;
+  startDate!: string;
 
   @prop()
-  endDate?: Date;
+  endDate?: string;
 }
 
-export const Experience =
-  mongoose.models.ExperienceClass ?? getModelForClass(ExperienceClass);
+export const ExperienceModel =
+  mongoose.models.Experience ?? getModelForClass(Experience);
