@@ -25,7 +25,7 @@ export default function ProjectArchive() {
 
   return (
     <div
-      className={`min-h-screen pb-16 pt-32 lg:px-48 lg:pt-16 flex flex-col transform transition duration-1000 ease-in-out ${
+      className={`min-h-screen pb-16 pt-32 px-8 lg:px-48 lg:pt-16 flex flex-col transform transition duration-1000 ease-in-out ${
         isVisible ? "opacity-100" : "opacity-0"
       }`}
     >
