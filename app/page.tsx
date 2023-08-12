@@ -24,7 +24,7 @@ export default function Home() {
 
   return (
     <main>
-      <div className="px-4 lg:px-48 fixed w-full bg-[#D4D4D4] z-50">
+      <div className="fixed w-full bg-[#D4D4D4] z-50">
         <Navbar
           aboutRef={aboutRef}
           contactRef={contactRef}

@@ -25,7 +25,7 @@ export default function Navbar({
 
   return (
     <nav
-      className={`flex justify-between items-center py-4 lg:py-px w-full transform transition duration-1000 ease-in-out ${
+      className={`flex px-4 lg:px-48 justify-between items-center py-4 lg:py-px w-full transform transition duration-1000 ease-in-out ${
         isVisible ? "opacity-100" : "opacity-0"
       }`}
     >
