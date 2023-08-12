@@ -18,15 +18,11 @@ export default function ProjectArchive() {
   });
 
   const [isVisible, setIsVisible] = useState(false);
-  const [isTableVisible, setIsTableVisible] = useState(false);
 
   useEffect(() => {
     if (!isVisible) setIsVisible(true);
   }, [isVisible]);
 
-  useEffect(() => {
-    if (projects.fetched) setIsTableVisible(true);
-  }, [projects.fetched]);
   return (
     <div
       className={`px-4 lg:px-48 min-h-screen pt-32 lg:pt-16 pb-16 flex flex-col transform transition duration-1000 ease-in-out ${
@@ -46,7 +42,7 @@ export default function ProjectArchive() {
       {projects.fetched ? (
         <table
           className={`table-auto bg-[#253956] self-center text-[#eee] rounded-lg text-sm transform transition duration-1000 ${
-            isTableVisible ? "opacity-100" : "opacity-0"
+            projects.fetched ? "opacity-100" : "opacity-0"
           } `}
         >
           <thead className="p-4">
@@ -104,7 +100,11 @@ export default function ProjectArchive() {
         </table>
       ) : (
         <div className="flex justify-center">
-          <LoadingSpinner />
+          <LoadingSpinner
+            className={`transform transition duration-1000 ${
+              projects.fetched ? "opacity-0" : "opacity-100"
+            }`}
+          />
         </div>
       )}
     </div>

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { MutableRefObject } from "react";
+import { MutableRefObject, useEffect, useState } from "react";
 
 import { useIntersectionObserver } from "@/utils/hooks/useIntersectionObserver";
 import { useDatabaseData } from "@/utils/hooks/useDatabaseData";
