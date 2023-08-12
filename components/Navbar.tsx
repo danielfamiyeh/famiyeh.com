@@ -1,6 +1,6 @@
 "use client";
 
-import { MutableRefObject, useState } from "react";
+import { MutableRefObject, useEffect, useState } from "react";
 
 const pages = [
   { title: "About" },
@@ -17,9 +17,18 @@ export default function Navbar({
 }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const refs = [aboutRef, experienceRef, projectsRef, contactRef];
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    if (!isVisible) setIsVisible(true);
+  }, [isVisible]);
 
   return (
-    <nav className="flex justify-between items-center py-4 lg:py-px w-full">
+    <nav
+      className={`flex justify-between items-center py-4 lg:py-px w-full transform transition duration-1000 ease-in-out ${
+        isVisible ? "opacity-100" : "opacity-0"
+      }`}
+    >
       <div className="flex gap-1 select-none">
         <p className="m-0">Daniel</p>
         <b
@@ -54,7 +63,7 @@ export default function Navbar({
         <ul
           className={`flex flex-col fixed right-0 text-right mt-5 bg-[#D4D4D4] w-full overflow-hidden ${
             isOpen ? "max-h-[1000px]" : "max-h-0"
-          } transition-all duration-700 ease-in-out lg:max-h-[9999px] lg:mt-0 lg:flex-row lg:relative`}
+          } transition-all duration-700 ease-in-out lg:max-h-[1000px] lg:mt-0 lg:flex-row lg:relative`}
         >
           {pages.map(({ title }, i) => (
             <li
