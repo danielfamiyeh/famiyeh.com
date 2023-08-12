@@ -57,7 +57,7 @@ export default function Experiences({ innerRef }: ExperiencesProps) {
             ) => (
               <li
                 key={`${employer}-${title}-employer`}
-                className="p-4 pr-12 bg-[#253956] rounded-md mb-4 text-white select-none"
+                className="p-4 bg-[#253956] rounded-md mb-4 text-white select-none"
               >
                 <div className={`${logoBg ? "py-4" : ""} lg:py-0`}>
                   <div className="flex flex-col items-center justify-center text-center lg:flex-row lg:text-left mb-4">
