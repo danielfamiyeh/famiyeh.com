@@ -6,6 +6,7 @@ import { getProjectsAction } from "@/app/_actions";
 import { Project } from "@/models/Project";
 import { fonts } from "@/utils/fonts";
 import Link from "./Link";
+import { linkIcons } from "@/utils/links";
 
 export default function Projects({ innerRef }: ProjectsProps) {
   const intersector = useIntersectionObserver(innerRef, {});
@@ -55,17 +56,24 @@ export default function Projects({ innerRef }: ProjectsProps) {
               </ul>
 
               <ul className="mt-5 flex flex-wrap gap-4 text-sm underline">
-                {links.map(({ site, url }: { site: string; url: string }) => (
-                  <Link
-                    key={url}
-                    href={url}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className={`transition-opacity ease-in-out duration-300 hover:opacity-25`}
-                  >
-                    {site}
-                  </Link>
-                ))}
+                {links.map(({ site, url }: { site: string; url: string }) => {
+                  const Icon =
+                    linkIcons[
+                      site.toLocaleLowerCase() as keyof typeof linkIcons
+                    ];
+
+                  return (
+                    <Link
+                      key={url}
+                      href={url}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className={`transition-opacity ease-in-out duration-300 hover:opacity-25`}
+                    >
+                      <Icon className="invert" width={36} height={36} />
+                    </Link>
+                  );
+                })}
               </ul>
             </li>
           );
