@@ -85,7 +85,12 @@ export default function ProjectArchive() {
                         ];
 
                       return (
-                        <Link key={link.url} href={link.url}>
+                        <Link
+                          key={link.url}
+                          href={link.url}
+                          target="_blank"
+                          rel="noreferrer moopener"
+                        >
                           <Icon
                             key={`project-${id}-link${link.site}`}
                             height={24}
