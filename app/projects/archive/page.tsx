@@ -5,6 +5,7 @@ import { fonts } from "@/utils/fonts";
 import { Project } from "@/models/Project";
 import { getProjectsAction } from "@/app/_actions";
 import { useDatabaseData } from "@/utils/hooks/useDatabaseData";
+import { linkIcons } from "@/utils/links";
 
 export default function ProjectArchive() {
   const projects = useDatabaseData<Project>({
@@ -36,12 +37,32 @@ export default function ProjectArchive() {
 
         <tbody>
           {projects?.data?.map((project) => {
-            const withId = project as Project & { _id: string };
+            const id = (project as Project & { _id: string })._id.toString();
+
             return (
-              <tr key={withId._id} className="border-t border-neutral-300">
+              <tr key={`project-${id}`} className="border-t border-neutral-300">
                 <td className="px-4 py-2">{project.title}</td>
-                <td className="px-4">{project.subtitle}</td>
-                <td className="px-4">{project.skills.join(", ")}</td>
+                <td className="px-4 py-2">{project.subtitle}</td>
+                <td className="px-4 py-2">{project.skills.join(", ")}</td>
+                <td className="px-4 py-2 flex flex-wrap items-center justify-center">
+                  {project.links.map((link) => {
+                    const Icon =
+                      linkIcons[
+                        link.site.toLocaleLowerCase() as keyof typeof linkIcons
+                      ];
+
+                    return (
+                      <Link href={link.url}>
+                        <Icon
+                          key={`project-${id}-link${link.site}`}
+                          className="invert"
+                          height={24}
+                          width={24}
+                        />
+                      </Link>
+                    );
+                  })}
+                </td>
               </tr>
             );
           })}
