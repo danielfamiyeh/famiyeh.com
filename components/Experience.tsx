@@ -1,12 +1,12 @@
 import Image from "next/image";
-import { MutableRefObject, useEffect, useState } from "react";
+import { MutableRefObject } from "react";
 
 import { useIntersectionObserver } from "@/utils/hooks/useIntersectionObserver";
+import { useDatabaseData } from "@/utils/hooks/useDatabaseData";
 import { getExperiencesAction } from "@/app/_actions";
 import { dateFormatter } from "@/utils/constants";
 import { Experience } from "@/models/Experience";
 import { fonts } from "@/utils/fonts";
-import { FetchedData } from "@/type";
 
 const imgClassNames = [
   "rounded-xl",
@@ -18,28 +18,10 @@ export default function Experiences({ innerRef }: ExperiencesProps) {
   const intersector = useIntersectionObserver(innerRef, {});
   const isVisible = intersector?.isIntersecting;
 
-  const [experiences, setExperiences] = useState<FetchedData<Experience>>({
-    fetched: false,
-    error: null,
-    data: [],
+  const experiences = useDatabaseData<Experience>({
+    getAction: getExperiencesAction,
+    key: "experiences",
   });
-
-  useEffect(() => {
-    const init = async () => {
-      try {
-        const res = await getExperiencesAction();
-        setExperiences({
-          ...experiences,
-          fetched: true,
-          data: res.experiences,
-        });
-      } catch (error: any) {
-        setExperiences({ ...experiences, error: error.message, fetched: true });
-      }
-    };
-
-    init();
-  }, []);
 
   return (
     <div

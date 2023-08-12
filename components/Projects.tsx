@@ -12,8 +12,8 @@ export default function Projects({ innerRef }: ProjectsProps) {
   const isVisible = intersector?.isIntersecting;
 
   const projects = useDatabaseData<Project>({
-    key: "projects",
     getAction: getProjectsAction,
+    key: "projects",
   });
 
   return (
