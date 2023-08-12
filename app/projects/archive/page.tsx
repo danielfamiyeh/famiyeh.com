@@ -2,14 +2,14 @@
 
 import { useEffect, useState } from "react";
 
+import LoadingSpinner from "@/components/LoadingSpinner";
 import Link from "@/components/Link";
 
-import { useDatabaseData } from "@/utils/hooks/useDatabaseData";
-import { getProjectsAction } from "@/app/_actions";
-import { Project } from "@/models/Project";
-import { linkIcons } from "@/utils/links";
 import { fonts } from "@/utils/fonts";
-import LoadingSpinner from "@/components/LoadingSpinner";
+import { linkIcons } from "@/utils/links";
+import { Project } from "@/models/Project";
+import { getProjectsAction } from "@/app/_actions";
+import { useDatabaseData } from "@/utils/hooks/useDatabaseData";
 
 export default function ProjectArchive() {
   const projects = useDatabaseData<Project>({

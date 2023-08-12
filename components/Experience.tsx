@@ -35,7 +35,11 @@ export default function Experiences({ innerRef }: ExperiencesProps) {
         EXPERIENCE
         <hr className="mt-1" />
       </h2>
-      <ul>
+      <ul
+        className={`transform transition duration-1000 ${
+          experiences.fetched ? "opacity-100" : "opacity-0"
+        }`}
+      >
         {experiences.fetched ? (
           experiences.data.map(
             (
@@ -109,7 +113,11 @@ export default function Experiences({ innerRef }: ExperiencesProps) {
             )
           )
         ) : (
-          <div className="flex justify-center">
+          <div
+            className={`flex justify-center transform transition duration-1000 ${
+              experiences.fetched ? "opacity-0" : "opacity-100"
+            }`}
+          >
             <LoadingSpinner />
           </div>
         )}
