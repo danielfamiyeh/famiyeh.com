@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import { prop, getModelForClass } from "@typegoose/typegoose";
 
 import { ExternalLink } from "./ExternalLink";
@@ -28,4 +29,5 @@ export class ProjectClass {
   public links!: ExternalLink[];
 }
 
-export const Project = getModelForClass(ProjectClass);
+export const Project =
+  mongoose.models.ProjectClass ?? getModelForClass(ProjectClass);
