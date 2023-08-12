@@ -10,12 +10,10 @@ export async function getProjectsAction(): Promise<{
   projects: Project[];
 }> {
   const projects = await getProjects();
-
   return projects;
 }
 
 export async function getExperiencesAction() {
   const experiences = await getExperiences();
-
   return experiences;
 }
