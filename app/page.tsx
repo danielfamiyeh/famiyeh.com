@@ -18,7 +18,9 @@ export default function Home() {
   const projectsRef = useRef<HTMLDivElement | null>(null);
   const experienceRef = useRef<HTMLDivElement | null>(null);
 
-  const isHeroTitleVisible = !!heroTitleEntry?.isIntersecting;
+  const isHeroTitleVisible = heroTitleEntry
+    ? heroTitleEntry.isIntersecting
+    : true;
 
   return (
     <main>

@@ -2,10 +2,11 @@
 
 import Link from "@/components/Link";
 import { fonts } from "@/utils/fonts";
+import { linkIcons } from "@/utils/links";
 import { Project } from "@/models/Project";
 import { getProjectsAction } from "@/app/_actions";
 import { useDatabaseData } from "@/utils/hooks/useDatabaseData";
-import { linkIcons } from "@/utils/links";
+import { useEffect, useState } from "react";
 
 export default function ProjectArchive() {
   const projects = useDatabaseData<Project>({
@@ -13,8 +14,18 @@ export default function ProjectArchive() {
     key: "projects",
   });
 
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    if (!isVisible) setIsVisible(true);
+  }, [isVisible]);
+
   return (
-    <div className="px-4 lg:px-48 min-h-screen pt-32 lg:pt-16 pb-16 flex flex-col">
+    <div
+      className={`px-4 lg:px-48 min-h-screen pt-32 lg:pt-16 pb-16 flex flex-col transform transition duration-1000 ease-in-out ${
+        isVisible ? "opacity-100" : "opacity-0"
+      }`}
+    >
       <Link href="/">
         <b>Back to Homepage</b>
       </Link>
@@ -40,7 +51,7 @@ export default function ProjectArchive() {
             const id = (project as Project & { _id: string })._id.toString();
 
             return (
-              <tr key={`project-${id}`} className="border-t border-neutral-300">
+              <tr key={`project-${id}`} className="border-t border-[#4a6182]">
                 <td className="px-4 py-2">{project.title}</td>
                 <td className="px-4 py-2">{project.subtitle}</td>
                 <td className="px-4 py-2">{project.skills.join(", ")}</td>
