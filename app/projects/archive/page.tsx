@@ -1,12 +1,13 @@
 "use client";
 
-import Link from "@/components/Link";
-import { fonts } from "@/utils/fonts";
-import { linkIcons } from "@/utils/links";
-import { Project } from "@/models/Project";
-import { getProjectsAction } from "@/app/_actions";
-import { useDatabaseData } from "@/utils/hooks/useDatabaseData";
 import { useEffect, useState } from "react";
+
+import { useDatabaseData } from "@/utils/hooks/useDatabaseData";
+import { getProjectsAction } from "@/app/_actions";
+import { Project } from "@/models/Project";
+import { linkIcons } from "@/utils/links";
+import { fonts } from "@/utils/fonts";
+import Link from "@/components/Link";
 
 export default function ProjectArchive() {
   const projects = useDatabaseData<Project>({
