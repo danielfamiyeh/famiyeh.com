@@ -37,7 +37,11 @@ export default function Projects({ innerRef }: ProjectsProps) {
         <hr className="mt-1" />
       </div>
       {projects.fetched ? (
-        <ul className="flex flex-wrap flex-col lg:flex-row gap-4 justify-center text-white">
+        <ul
+          className={`flex flex-wrap flex-col lg:flex-row gap-4 justify-center text-white transform transition duration-1000 ${
+            projects.fetched ? "opacity-100" : "opacity-0"
+          }`}
+        >
           {projects?.data?.map(({ title, subtitle, skills, links }, i) => {
             return (
               <li
@@ -85,7 +89,11 @@ export default function Projects({ innerRef }: ProjectsProps) {
           })}
         </ul>
       ) : (
-        <div className="flex justify-center">
+        <div
+          className={`flex justify-center transform transition duration-1000 ${
+            projects.fetched ? "opacity-0" : "opacity-100"
+          }`}
+        >
           <LoadingSpinner />
         </div>
       )}

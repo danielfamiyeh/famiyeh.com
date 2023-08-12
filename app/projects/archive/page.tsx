@@ -2,14 +2,14 @@
 
 import { useEffect, useState } from "react";
 
+import LoadingSpinner from "@/components/LoadingSpinner";
 import Link from "@/components/Link";
 
-import { useDatabaseData } from "@/utils/hooks/useDatabaseData";
-import { getProjectsAction } from "@/app/_actions";
-import { Project } from "@/models/Project";
-import { linkIcons } from "@/utils/links";
 import { fonts } from "@/utils/fonts";
-import LoadingSpinner from "@/components/LoadingSpinner";
+import { linkIcons } from "@/utils/links";
+import { Project } from "@/models/Project";
+import { getProjectsAction } from "@/app/_actions";
+import { useDatabaseData } from "@/utils/hooks/useDatabaseData";
 
 export default function ProjectArchive() {
   const projects = useDatabaseData<Project>({
@@ -40,7 +40,11 @@ export default function ProjectArchive() {
       <hr className="mb-8" />
 
       {projects.fetched ? (
-        <table className="table-auto bg-[#253956] self-center text-[#eee] rounded-lg text-sm">
+        <table
+          className={`table-auto bg-[#253956] self-center text-[#eee] rounded-lg text-sm transform transition duration-1000 ${
+            projects.fetched ? "opacity-100" : "opacity-0"
+          } `}
+        >
           <thead className="p-4">
             <tr>
               <td className="py-4 px-4">Title</td>
@@ -96,7 +100,11 @@ export default function ProjectArchive() {
         </table>
       ) : (
         <div className="flex justify-center">
-          <LoadingSpinner />
+          <LoadingSpinner
+            className={`transform transition duration-1000 ${
+              projects.fetched ? "opacity-0" : "opacity-100"
+            }`}
+          />
         </div>
       )}
     </div>
