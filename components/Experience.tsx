@@ -30,20 +30,29 @@ export default function Experiences({ innerRef }: ExperiencesProps) {
       <ul>
         {experiences.map(
           (
-            { title, description, employer, skills, logo, startDate, endDate },
+            {
+              title,
+              description,
+              employer,
+              skills,
+              logo,
+              logoBg,
+              startDate,
+              endDate,
+            },
             i
           ) => (
             <li
               key={`${employer}-${title}-employer`}
               className="p-4 pr-12 bg-[#253956] rounded-md mb-4 text-white select-none"
             >
-              <div>
-                <div className="flex items-center justify-center mb-4">
+              <div className={`${logoBg ? "py-4" : ""} lg:py-0`}>
+                <div className="flex flex-col items-center justify-center text-center lg:flex-row lg:text-left mb-4">
                   <div
-                    className={`w-[128px] h-[128px] flex items-center justify-center mr-12 ${imgClassNames[i]}`}
+                    className={`w-[128px] h-[128px] flex items-center justify-center lg:mr-12 ${imgClassNames[i]}`}
                   >
                     <Image
-                      className="rounded-md"
+                      className={`rounded-md ${logoBg ? "mb-8" : ""} lg:my-0`}
                       alt={`${employer}-logo`}
                       src={logo}
                       width={128}

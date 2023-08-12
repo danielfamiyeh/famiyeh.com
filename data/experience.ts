@@ -31,6 +31,7 @@ export const experiences: Experience[] = [
       "Bootstrapped a metrics dashboard using React and Node, effectively visualising key performance indicators to provide insight into product performance and inform strategic decision making.",
     ],
     logo: "/logos/base.jpg",
+    logoBg: true,
     startDate: new Date("2022/10/01"),
     endDate: new Date("2023/01/31"),
     skills: [
@@ -87,8 +88,8 @@ export const experiences: Experience[] = [
       "Architected a command-line interface (CLI) and over-the-air (OTA) testing utility for the remote control of a set-top box, streaming player.",
       "Gained valuable experience in test-driven development, project management, and the various lifecycle phases of software development.",
     ],
-
     logo: "/logos/atmel.png",
+    logoBg: true,
     startDate: new Date("2014/09/01"),
     endDate: new Date("2014/10/10"),
     skills: ["Python 2", "Git", "Internet of Things (IoT)"],
