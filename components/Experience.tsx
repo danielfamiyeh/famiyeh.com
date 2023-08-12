@@ -1,10 +1,12 @@
 import Image from "next/image";
-import { MutableRefObject } from "react";
+import { MutableRefObject, useEffect, useState } from "react";
 
 import { useIntersectionObserver } from "@/utils/hooks/useIntersectionObserver";
+import { getExperiencesAction } from "@/app/_actions";
 import { dateFormatter } from "@/utils/constants";
-import { experiences } from "@/data/experience";
+import { Experience } from "@/models/Experience";
 import { fonts } from "@/utils/fonts";
+import { FetchedData } from "@/type";
 
 const imgClassNames = [
   "rounded-xl",
@@ -15,6 +17,29 @@ const imgClassNames = [
 export default function Experiences({ innerRef }: ExperiencesProps) {
   const intersector = useIntersectionObserver(innerRef, {});
   const isVisible = intersector?.isIntersecting;
+
+  const [experiences, setExperiences] = useState<FetchedData<Experience>>({
+    fetched: false,
+    error: null,
+    data: [],
+  });
+
+  useEffect(() => {
+    const init = async () => {
+      try {
+        const res = await getExperiencesAction();
+        setExperiences({
+          ...experiences,
+          fetched: true,
+          data: res.experiences,
+        });
+      } catch (error: any) {
+        setExperiences({ ...experiences, error: error.message, fetched: true });
+      }
+    };
+
+    init();
+  }, []);
 
   return (
     <div
@@ -28,7 +53,7 @@ export default function Experiences({ innerRef }: ExperiencesProps) {
         <hr className="mt-1" />
       </h2>
       <ul>
-        {experiences.map(
+        {experiences.data.map(
           (
             {
               title,
@@ -64,8 +89,10 @@ export default function Experiences({ innerRef }: ExperiencesProps) {
                       <h3 className="text-xl">{title}</h3>
                       <p className="m-0">{employer}</p>
                       <small>
-                        {dateFormatter.format(startDate)} -{" "}
-                        {endDate ? dateFormatter.format(endDate) : "Present"}
+                        {dateFormatter.format(Date.parse(startDate))} -{" "}
+                        {endDate
+                          ? dateFormatter.format(Date.parse(endDate))
+                          : "Present"}
                       </small>
                     </div>
                   </div>

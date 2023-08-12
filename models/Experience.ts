@@ -21,10 +21,10 @@ export class Experience {
   skills!: string[];
 
   @prop({ required: true })
-  startDate!: Date;
+  startDate!: string;
 
   @prop()
-  endDate?: Date;
+  endDate?: string;
 }
 
 export const ExperienceModel =

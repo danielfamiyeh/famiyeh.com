@@ -10,6 +10,7 @@ import { Project } from "@/models/Project";
 export default function Projects({ innerRef }: ProjectsProps) {
   const intersector = useIntersectionObserver(innerRef, {});
   const isVisible = intersector?.isIntersecting;
+
   const [projects, setProjects] = useState<FetchedData<Project>>({
     fetched: false,
     error: null,
@@ -28,8 +29,6 @@ export default function Projects({ innerRef }: ProjectsProps) {
 
     init();
   }, []);
-
-  console.log({ projects });
 
   return (
     <div
