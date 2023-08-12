@@ -49,7 +49,10 @@ export default function Projects({ innerRef }: ProjectsProps) {
               <hr className="my-4" />
               <ul className="flex flex-wrap justify-center">
                 {skills.map((skill: string) => (
-                  <li key={`${title}-skill-${skill}`} className="mx-2">
+                  <li
+                    key={`${title}-skill-${skill}`}
+                    className="m-2 bg-slate-500 px-4 py-px rounded-lg"
+                  >
                     <small className="font-bold">{skill}</small>
                   </li>
                 ))}

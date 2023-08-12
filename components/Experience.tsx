@@ -95,7 +95,10 @@ export default function Experiences({ innerRef }: ExperiencesProps) {
               <hr className="my-3" />
               <ul className="flex flex-wrap justify-center">
                 {skills.map((skill) => (
-                  <li key={`${employer}-skill-${skill}`} className="mx-2">
+                  <li
+                    key={`${employer}-skill-${skill}`}
+                    className="m-2 bg-slate-500 px-4 py-px rounded-lg"
+                  >
                     <small className="font-bold">{skill}</small>
                   </li>
                 ))}
