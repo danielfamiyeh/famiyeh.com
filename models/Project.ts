@@ -1,8 +1,10 @@
-import { prop } from "@typegoose/typegoose";
+import mongoose from "mongoose";
+import { prop, getModelForClass } from "@typegoose/typegoose";
+
 import { ExternalLink } from "./ExternalLink";
 
-export class Project {
-  @prop({ required: true })
+export class ProjectClass {
+  @prop({ required: true, unique: true })
   public title!: string;
 
   @prop({ required: true })
@@ -26,3 +28,6 @@ export class Project {
   @prop({ required: true, type: () => [ExternalLink] })
   public links!: ExternalLink[];
 }
+
+export const Project =
+  mongoose.models.ProjectClass ?? getModelForClass(ProjectClass);

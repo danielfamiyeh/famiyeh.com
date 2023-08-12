@@ -1,7 +1,8 @@
-import { prop } from "@typegoose/typegoose";
+import mongoose from "mongoose";
+import { prop, getModelForClass } from "@typegoose/typegoose";
 
-export class Experience {
-  @prop({ required: true })
+export class ExperienceClass {
+  @prop({ required: true, unique: true })
   public title!: string;
 
   @prop({ required: true })
@@ -25,3 +26,6 @@ export class Experience {
   @prop()
   endDate?: Date;
 }
+
+export const Experience =
+  mongoose.models.ExperienceClass ?? getModelForClass(ExperienceClass);
