@@ -1,18 +1,18 @@
-import { ExternalLink } from "@/types";
+import { Component } from "react";
 
-import GithubIcon from "../public/links/github.svg";
-import LinkedinIcon from "../public/links/linkedin.svg";
+import { linkIcons } from "./links";
+import { ExternalLink } from "@/models/ExternalLink";
 
-export const contactLinks: ExternalLink[] = [
+export const contactLinks: (ExternalLink & { Icon: typeof Component })[] = [
   {
     site: "Github",
     url: "https://github.com/danielfamiyeh",
-    Icon: GithubIcon,
+    Icon: linkIcons.github,
   },
 
   {
     site: "LinkedIn",
     url: "https://www.linkedin.com/in/daniel-k-famiyeh/",
-    Icon: LinkedinIcon,
+    Icon: linkIcons.linkedin,
   },
 ];

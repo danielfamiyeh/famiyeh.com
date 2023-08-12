@@ -23,8 +23,6 @@ export default function Projects({ innerRef }: ProjectsProps) {
       <ul className="flex flex-wrap flex-col lg:flex-row gap-4 justify-center text-white">
         {projects.map(({ title, subtitle, skills, links }, i) => {
           return (
-            // TODO: replace with project id
-
             <li
               key={`project-${title}`}
               className={`basis-5/12 lg py-32 bg-[#253956] flex flex-col items-center justify-center p-4 text-center rounded-tr-[4rem] select-none rounded-bl-[4rem] ${
