@@ -1,6 +1,6 @@
-import { ExperienceClass } from "@/models/Experience";
+import { Experience } from "@/models/Experience";
 
-export const experiences: ExperienceClass[] = [
+export const experiences: Experience[] = [
   {
     title: "Full-stack Developer",
     employer: "Podaris Limited",
