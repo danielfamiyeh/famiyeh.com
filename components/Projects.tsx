@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { MutableRefObject } from "react";
 
 import { useIntersectionObserver } from "@/utils/hooks/useIntersectionObserver";
@@ -6,6 +5,7 @@ import { useDatabaseData } from "@/utils/hooks/useDatabaseData";
 import { getProjectsAction } from "@/app/_actions";
 import { Project } from "@/models/Project";
 import { fonts } from "@/utils/fonts";
+import Link from "./Link";
 
 export default function Projects({ innerRef }: ProjectsProps) {
   const intersector = useIntersectionObserver(innerRef, {});
@@ -23,10 +23,17 @@ export default function Projects({ innerRef }: ProjectsProps) {
         isVisible ? "opacity-100" : "opacity-0"
       }`}
     >
-      <h2 className={`text-light text-4xl ${fonts.title.className} mb-4`}>
-        PROJECTS
+      <div className="mb-4">
+        <div className="flex items-end justify-between">
+          <h2 className={`text-light text-4xl ${fonts.title.className}`}>
+            PROJECTS
+          </h2>
+          <Link href="/projects/archive">
+            <b>View Project Archive</b>
+          </Link>
+        </div>
         <hr className="mt-1" />
-      </h2>
+      </div>
       <ul className="flex flex-wrap flex-col lg:flex-row gap-4 justify-center text-white">
         {projects?.data?.map(({ title, subtitle, skills, links }, i) => {
           return (

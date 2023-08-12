@@ -1,9 +1,18 @@
-import { useEffect } from "react";
+"use client";
 
 import Link from "@/components/Link";
 import { fonts } from "@/utils/fonts";
+import { Project } from "@/models/Project";
+import { getProjectsAction } from "@/app/_actions";
+import { useDatabaseData } from "@/utils/hooks/useDatabaseData";
 
 export default function ProjectArchive() {
+  const projects = useDatabaseData<Project>({
+    getAction: () => getProjectsAction({ limit: 100 }),
+    key: "projects",
+  });
+
+  console.log({ projects });
   return (
     <div>
       <div className="px-4 lg:px-48 min-h-screen pt-32 lg:pt-16 pb-16">

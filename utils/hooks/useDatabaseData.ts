@@ -6,7 +6,13 @@ export interface Args {
   getAction: Function;
 }
 
-export function useDatabaseData<T>({ key, getAction }: Args) {
+/**
+ * Fetches data from the database
+ *
+ * @param {Args} args Hook args
+ * @returns {FetchedData<T>}
+ */
+export function useDatabaseData<T>({ key, getAction }: Args): FetchedData<T> {
   const [data, setData] = useState<FetchedData<T>>({
     fetched: false,
     error: null,
