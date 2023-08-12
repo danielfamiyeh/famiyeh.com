@@ -71,9 +71,9 @@ export default function ProjectArchive() {
                     {project.skills.map((skill) => (
                       <div
                         key={`project-${id}-skill${skill}`}
-                        className="bg-slate-500 px-4 py-px m-2 inline-block"
+                        className="bg-slate-500 px-4 py-px m-2 inline-block rounded-lg"
                       >
-                        {skill}
+                        <b>{skill}</b>
                       </div>
                     ))}
                   </td>
