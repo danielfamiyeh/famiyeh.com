@@ -1,8 +1,6 @@
-import mongoose from "mongoose";
-
-import { PaginationFilter, PAGINATION_FILTER_DEFAULTS } from "./filters";
-import { Experience, ExperienceModel } from "@/models/Experience";
 import connectDB from "./db";
+import { ExperienceModel } from "@/models/Experience";
+import { PaginationFilter, PAGINATION_FILTER_DEFAULTS } from "./filters";
 
 export type ExperienceFilters = PaginationFilter;
 

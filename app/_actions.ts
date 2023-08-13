@@ -1,8 +1,15 @@
 "use server";
 
 import { Project } from "@/models/Project";
+import { getAboutContents } from "@/lib/db/about-content-db";
 import { getProjects, ProjectFilters } from "@/lib/db/project-db";
 import { ExperienceFilters, getExperiences } from "@/lib/db/experience-db";
+import AboutContent from "@/models/AboutContent";
+
+export async function getAboutContentsAction(): Promise<AboutContent> {
+  const aboutContents = await getAboutContents();
+  return aboutContents;
+}
 
 export async function getProjectsAction(filters?: ProjectFilters): Promise<{
   status: string;

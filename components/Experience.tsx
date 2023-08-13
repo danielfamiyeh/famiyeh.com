@@ -41,7 +41,7 @@ export default function Experiences({ innerRef }: ExperiencesProps) {
         }`}
       >
         {experiences.fetched ? (
-          experiences.data.map(
+          (experiences.data as Experience[]).map(
             (
               {
                 title,

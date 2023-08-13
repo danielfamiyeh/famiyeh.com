@@ -55,7 +55,7 @@ export default function ProjectArchive() {
           </thead>
 
           <tbody>
-            {projects?.data?.map((project) => {
+            {(projects?.data as Project[])?.map((project) => {
               const id = (project as Project & { _id: string })._id.toString();
 
               return (

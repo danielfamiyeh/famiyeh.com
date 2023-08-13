@@ -1,14 +1,22 @@
 "use client";
 
+import Image from "next/image";
 import { MutableRefObject } from "react";
 
-import { fonts } from "@/utils/fonts";
-import Image from "next/image";
 import { useIntersectionObserver } from "@/utils/hooks/useIntersectionObserver";
+import { useDatabaseData } from "@/utils/hooks/useDatabaseData";
+import AboutContent from "@/models/AboutContent";
+import { fonts } from "@/utils/fonts";
+import { getAboutContentsAction } from "@/app/_actions";
 
 export default function About({ innerRef }: AboutProps) {
   const intersector = useIntersectionObserver(innerRef, {});
   const isVisible = intersector?.isIntersecting;
+
+  const aboutContents = useDatabaseData<AboutContent>({
+    getAction: getAboutContentsAction,
+    key: "aboutContents",
+  });
 
   return (
     <div
@@ -27,36 +35,21 @@ export default function About({ innerRef }: AboutProps) {
         />
       </div>
       <div className="lg:w-2/12"></div>
-      <div className="lg:w-6/12 text-center lg:text-left">
-        <h1 className={`${fonts.title.className} text-[#eeeeee] text-6xl`}>
+      <div
+        className={`lg:w-6/12 text-center lg:text-left transform transition duratio-10000 ease-in-out ${
+          aboutContents.fetched ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        <h1 className={`${fonts.title.className} text-[#eeeeee] text-6xl mb-2`}>
           Welcome!
         </h1>
-        <p className="text-white mt-4">
-          I&apos;m Daniel Famiyeh, a passionate software developer with a
-          journey that began in the intriguing realm of the Sony PSP homebrew
-          scene at age 11.
-        </p>
-        <p className="text-white mt-2">
-          Inspired by my new-found passion, I started developing Python scripts
-          and tinkered with JavaScript to create 2D games using the Canvas API.
-        </p>
-
-        <p className="text-white mt-2">
-          My early forays into web development through crafting Tumblr themes
-          for myself and friends sowed the seeds for a future reconnection with
-          this dynamic domain.
-        </p>
-
-        <p className="text-white mt-2">
-          Now I&apos;ve had the pleasure of working with two consultancies, two
-          startups and enjoy delving into hobby projects that span different
-          fields.
-        </p>
-
-        <p className="text-white mt-2">
-          When I&apos;m not at my desk, you can find me at the skatepark, at my
-          piano, snapping photos/filming or being with friends.
-        </p>
+        {aboutContents?.data
+          ? (aboutContents.data as AboutContent)?.content?.map((text) => (
+              <p key={text} className="text-white mt-2">
+                {text}
+              </p>
+            ))
+          : null}
       </div>
     </div>
   );

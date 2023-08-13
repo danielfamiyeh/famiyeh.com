@@ -1,8 +1,6 @@
-import mongoose from "mongoose";
-
-import { PaginationFilter, PAGINATION_FILTER_DEFAULTS } from "./filters";
-import { ProjectModel } from "@/models/Project";
 import connectDB from "./db";
+import { ProjectModel } from "@/models/Project";
+import { PaginationFilter, PAGINATION_FILTER_DEFAULTS } from "./filters";
 
 export type ProjectFilters = PaginationFilter;
 
