@@ -38,7 +38,16 @@ export default function Hero({ heroTitleRef }: HeroProps) {
         <div className="flex flex-col lg:flex-row mt-4">
           <div className="lg:w-4/12 bg-[#131313] p-32 rounded-r-[8rem] rounded-tl-[8rem] bg-[url('/hero/city.jpg')] bg-cover grayscale brightness-75" />
           <div className="lg:w-1/12" />
-          <div className="lg:w-7/12 bg-[#131313] rounded-[8rem] flex items-center justify-center"></div>
+          <div className="lg:w-7/12 bg-[#131313] rounded-[8rem] flex items-center justify-center">
+            <div>
+              <div className="rounded-full bg-white w-10 h-10" />
+              <div className="rounded-full bg-white w-10 h-10" />
+            </div>
+            <div>
+              <div className="rounded-full bg-white w-10 h-10" />
+              <div className="rounded-full bg-white w-10 h-10" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
