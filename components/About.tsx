@@ -38,8 +38,7 @@ export default function About({ innerRef }: AboutProps) {
         </p>
         <p className="text-white mt-2">
           Inspired by my new-found passion, I started developing Python scripts
-          and tinkered with JavaScript to creating 2D games using the Canvas
-          API.
+          and tinkered with JavaScript to create 2D games using the Canvas API.
         </p>
 
         <p className="text-white mt-2">
