@@ -8,6 +8,7 @@ import { linkIcons } from "@/utils/links";
 import { Project } from "@/models/Project";
 import { getProjectsAction } from "@/app/_actions";
 import { useDatabaseData } from "@/utils/hooks/useDatabaseData";
+import { useFadeIn } from "@/utils/hooks/useFadeIn";
 
 export default function Projects({ innerRef, isVisible }: ProjectsProps) {
   const projects = useDatabaseData<Project>({
@@ -15,12 +16,12 @@ export default function Projects({ innerRef, isVisible }: ProjectsProps) {
     key: "projects",
   });
 
+  const { opacity } = useFadeIn(isVisible);
+
   return (
     <div
       ref={innerRef}
-      className={`mt-16 pt-16 transform transition duration-1000 ease-in-out ${
-        isVisible ? "opacity-100" : "opacity-0"
-      }`}
+      className={`mt-16 pt-16 transform transition duration-1000 ease-in-out ${opacity}`}
     >
       <div className="mb-4">
         <div className="flex items-end justify-between">

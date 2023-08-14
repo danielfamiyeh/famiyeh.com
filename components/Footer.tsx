@@ -4,18 +4,19 @@ import Link from "next/link";
 import { MutableRefObject } from "react";
 
 import { useIntersectionObserver } from "@/utils/hooks/useIntersectionObserver";
+import { useFadeIn } from "@/utils/hooks/useFadeIn";
 import { contactLinks } from "@/utils/contact";
 
 export default function Footer({ innerRef }: FooterProps) {
   const intersector = useIntersectionObserver(innerRef, {});
   const isVisible = intersector?.isIntersecting;
 
+  const { opacity } = useFadeIn(isVisible);
+
   return (
     <div
       ref={innerRef}
-      className={`mt-16 p-4 text-center text-[#eeeeee] transform transition duration-1000 ease-in-out ${
-        isVisible ? "opacity-100" : "opacity-0"
-      }`}
+      className={`mt-16 p-4 text-center text-[#eeeeee] transform transition duration-1000 ease-in-out ${opacity}`}
     >
       <div className="flex flex-wrap items-center justify-center mb-2">
         {contactLinks.map(({ url, site, Icon }) => (
