@@ -13,6 +13,7 @@ export default function Home() {
   const heroTitleRef = useRef<HTMLDivElement | null>(null);
   const heroTitleEntry = useIntersectionObserver(heroTitleRef, {});
 
+  const homeRef = useRef<HTMLDivElement | null>(null);
   const aboutRef = useRef<HTMLDivElement | null>(null);
   const contactRef = useRef<HTMLDivElement | null>(null);
   const projectsRef = useRef<HTMLDivElement | null>(null);
@@ -26,6 +27,7 @@ export default function Home() {
     <main>
       <div className="fixed w-full bg-[#D4D4D4] z-50">
         <Navbar
+          homeRef={homeRef}
           aboutRef={aboutRef}
           contactRef={contactRef}
           projectsRef={projectsRef}
@@ -33,7 +35,10 @@ export default function Home() {
           isHeroTitleVisible={isHeroTitleVisible}
         />
       </div>
-      <div className="px-4 lg:px-48 flex items-center justify-center min-h-screen pt-16 pb-16 bg-[#D4D4D4]">
+      <div
+        ref={homeRef}
+        className="px-4 lg:px-48 flex items-center border-black justify-center min-h-screen pt-16 pb-16 bg-[#D4D4D4]"
+      >
         <Hero heroTitleRef={heroTitleRef} />
       </div>
       <div className="min-h-screen w-full bg-[#1D2D44] px-4 lg:px-48 pb-16">
