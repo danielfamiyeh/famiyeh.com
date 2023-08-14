@@ -27,7 +27,7 @@ export default function About({ innerRef }: AboutProps) {
     >
       <div className="lg:w-4/12">
         <Image
-          className="rounded-full mb-16 lg:mb-0"
+          className="rounded-full mb-16 lg:mb-0 border-8"
           alt="Picture of Daniel Famiyeh"
           src="/profile.jpg"
           width={400}
@@ -40,16 +40,19 @@ export default function About({ innerRef }: AboutProps) {
           aboutContents.fetched ? "opacity-100" : "opacity-0"
         }`}
       >
-        <h1 className={`${fonts.title.className} text-[#eeeeee] text-6xl mb-2`}>
-          Welcome!
+        <h1 className={`${fonts.title.className} text-[#eeeeee] text-4xl mb-2`}>
+          ABOUT ME
         </h1>
-        {aboutContents?.data
-          ? (aboutContents.data as AboutContent)?.content?.map((text) => (
-              <p key={text} className="text-white mt-2">
-                {text}
-              </p>
-            ))
-          : null}
+        <hr className="mb-8" />
+        <div>
+          {aboutContents?.data
+            ? (aboutContents.data as AboutContent)?.content?.map((text) => (
+                <p key={text} className="text-white mt-2">
+                  {text}
+                </p>
+              ))
+            : null}
+        </div>
       </div>
     </div>
   );
