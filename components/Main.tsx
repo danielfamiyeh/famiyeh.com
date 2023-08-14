@@ -6,22 +6,27 @@ import About from "./About";
 import Projects from "./Projects";
 import Experience from "./Experience";
 
-export default function Main({
-  aboutRef,
-  experienceRef,
-  projectsRef,
-}: MainProps) {
+export default function Main(props: MainProps) {
   return (
     <div className="max-w-[1000px] mx-auto pt-24">
-      <About innerRef={aboutRef} />
-      <Experience innerRef={experienceRef} />
-      <Projects innerRef={projectsRef} />
+      <About innerRef={props.aboutRef} isVisible={props.isAboutVisible} />
+      <Experience
+        innerRef={props.experienceRef}
+        isVisible={props.isExperienceVisible}
+      />
+      <Projects
+        innerRef={props.projectsRef}
+        isVisible={props.isProjectsVisible}
+      />
     </div>
   );
 }
 
 type MainProps = {
-  aboutRef: MutableRefObject<HTMLDivElement | null>;
   experienceRef: MutableRefObject<HTMLDivElement | null>;
   projectsRef: MutableRefObject<HTMLDivElement | null>;
+  aboutRef: MutableRefObject<HTMLDivElement | null>;
+  isExperienceVisible?: boolean;
+  isProjectsVisible?: boolean;
+  isAboutVisible?: boolean;
 };

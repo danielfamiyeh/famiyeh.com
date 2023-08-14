@@ -3,16 +3,12 @@
 import Image from "next/image";
 import { MutableRefObject } from "react";
 
-import { useIntersectionObserver } from "@/utils/hooks/useIntersectionObserver";
 import { useDatabaseData } from "@/utils/hooks/useDatabaseData";
 import { getAboutContentsAction } from "@/app/_actions";
 import AboutContent from "@/models/AboutContent";
 import { fonts } from "@/utils/fonts";
 
-export default function About({ innerRef }: AboutProps) {
-  const intersector = useIntersectionObserver(innerRef, {});
-  const isVisible = intersector?.isIntersecting;
-
+export default function About({ innerRef, isVisible }: AboutProps) {
   const aboutContents = useDatabaseData<AboutContent>({
     getAction: getAboutContentsAction,
     key: "aboutContents",
@@ -60,4 +56,5 @@ export default function About({ innerRef }: AboutProps) {
 
 type AboutProps = {
   innerRef: MutableRefObject<HTMLDivElement | null>;
+  isVisible?: boolean;
 };
