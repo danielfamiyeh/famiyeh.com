@@ -33,7 +33,7 @@ export default function Home() {
           isHeroTitleVisible={isHeroTitleVisible}
         />
       </div>
-      <div className="px-4 lg:px-48 min-h-screen pt-16 pb-16 bg-[#D4D4D4]">
+      <div className="px-4 lg:px-48 flex items-center justify-center min-h-screen pt-16 pb-16 bg-[#D4D4D4]">
         <Hero heroTitleRef={heroTitleRef} />
       </div>
       <div className="min-h-screen w-full bg-[#1D2D44] px-4 lg:px-48 pb-16">
