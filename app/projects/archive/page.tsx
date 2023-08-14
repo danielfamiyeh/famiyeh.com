@@ -33,8 +33,8 @@ export default function ProjectArchive() {
         <b>Back to Homepage</b>
       </Link>
 
-      <h1 className={`${fonts.title.className} text-[#eeeeee] text-6xl mt-4`}>
-        All Projects
+      <h1 className={`${fonts.title.className} text-[#eeeeee] text-4xl mt-4`}>
+        ALL PROJECTS
       </h1>
 
       <hr className="mb-8" />
