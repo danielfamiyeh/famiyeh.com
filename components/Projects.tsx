@@ -1,13 +1,14 @@
 import { MutableRefObject } from "react";
 
-import { useIntersectionObserver } from "@/utils/hooks/useIntersectionObserver";
-import { useDatabaseData } from "@/utils/hooks/useDatabaseData";
-import { getProjectsAction } from "@/app/_actions";
-import { Project } from "@/models/Project";
-import { fonts } from "@/utils/fonts";
-import Link from "./Link";
-import { linkIcons } from "@/utils/links";
 import LoadingSpinner from "./LoadingSpinner";
+import Link from "./Link";
+
+import { fonts } from "@/utils/fonts";
+import { linkIcons } from "@/utils/links";
+import { Project } from "@/models/Project";
+import { getProjectsAction } from "@/app/_actions";
+import { useDatabaseData } from "@/utils/hooks/useDatabaseData";
+import { useIntersectionObserver } from "@/utils/hooks/useIntersectionObserver";
 
 export default function Projects({ innerRef }: ProjectsProps) {
   const intersector = useIntersectionObserver(innerRef, {});
@@ -21,7 +22,7 @@ export default function Projects({ innerRef }: ProjectsProps) {
   return (
     <div
       ref={innerRef}
-      className={`mt-16 transform transition duration-1000 ease-in-out ${
+      className={`mt-16 pt-16 transform transition duration-1000 ease-in-out ${
         isVisible ? "opacity-100" : "opacity-0"
       }`}
     >

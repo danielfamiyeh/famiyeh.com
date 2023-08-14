@@ -21,7 +21,7 @@ export default function About({ innerRef }: AboutProps) {
   return (
     <div
       ref={innerRef}
-      className={`flex flex-col items-center lg:flex-row justify-between mb-36 transform transition duration-1000 ease-in-out ${
+      className={`flex flex-col items-center lg:flex-row justify-between mb-36 transform transition duration-1000 ease-in-out pt-24 ${
         isVisible ? "opacity-100" : "opacity-0"
       }`}
     >

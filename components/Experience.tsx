@@ -27,7 +27,7 @@ export default function Experiences({ innerRef }: ExperiencesProps) {
   return (
     <div
       ref={innerRef}
-      className={`mt-16 transform transition duration-1000 ease-in-out ${
+      className={`mt-16 transform transition duration-1000 pt-16 ease-in-out ${
         isVisible ? "opacity-100" : "opacity-0"
       }`}
     >
