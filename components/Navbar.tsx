@@ -3,6 +3,7 @@
 import { MutableRefObject, useEffect, useState } from "react";
 
 const pages = [
+  { title: "Home" },
   { title: "About" },
   { title: "Experience" },
   { title: "Projects" },
@@ -10,13 +11,14 @@ const pages = [
 
 export default function Navbar({
   isHeroTitleVisible,
+  homeRef,
   aboutRef,
   experienceRef,
   projectsRef,
   contactRef,
 }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const refs = [aboutRef, experienceRef, projectsRef, contactRef];
+  const refs = [homeRef, aboutRef, experienceRef, projectsRef, contactRef];
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -85,6 +87,7 @@ export default function Navbar({
 
 type NavbarProps = {
   isHeroTitleVisible: boolean;
+  homeRef: MutableRefObject<HTMLDivElement | null>;
   aboutRef: MutableRefObject<HTMLDivElement | null>;
   experienceRef: MutableRefObject<HTMLDivElement | null>;
   projectsRef: MutableRefObject<HTMLDivElement | null>;

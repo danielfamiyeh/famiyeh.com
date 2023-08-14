@@ -5,9 +5,9 @@ import { MutableRefObject } from "react";
 
 import { useIntersectionObserver } from "@/utils/hooks/useIntersectionObserver";
 import { useDatabaseData } from "@/utils/hooks/useDatabaseData";
+import { getAboutContentsAction } from "@/app/_actions";
 import AboutContent from "@/models/AboutContent";
 import { fonts } from "@/utils/fonts";
-import { getAboutContentsAction } from "@/app/_actions";
 
 export default function About({ innerRef }: AboutProps) {
   const intersector = useIntersectionObserver(innerRef, {});
