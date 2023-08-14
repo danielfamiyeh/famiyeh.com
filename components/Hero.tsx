@@ -4,17 +4,18 @@ import { MutableRefObject, useRef } from "react";
 
 import { useIntersectionObserver } from "@/utils/hooks/useIntersectionObserver";
 import { fonts } from "@/utils/fonts";
+import { useFadeIn } from "@/utils/hooks/useFadeIn";
 
 export default function Hero({ heroTitleRef }: HeroProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const containerIntersector = useIntersectionObserver(containerRef, {});
 
+  const { opacity } = useFadeIn(containerIntersector?.isIntersecting);
+
   return (
     <div
       ref={containerRef}
-      className={`flex flex-col max-w-[1000px] mx-auto transform transition duration-1000 ease-in-out ${
-        containerIntersector?.isIntersecting ? "opacity-100" : "opacity-0"
-      }`}
+      className={`flex flex-col max-w-[1000px] mx-auto transform transition duration-1000 ease-in-out ${opacity}`}
     >
       <div
         ref={heroTitleRef}

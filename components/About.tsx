@@ -4,6 +4,7 @@ import Image from "next/image";
 import { MutableRefObject } from "react";
 
 import { useDatabaseData } from "@/utils/hooks/useDatabaseData";
+import { useFadeIn } from "@/utils/hooks/useFadeIn";
 import { getAboutContentsAction } from "@/app/_actions";
 import AboutContent from "@/models/AboutContent";
 import { fonts } from "@/utils/fonts";
@@ -14,12 +15,12 @@ export default function About({ innerRef, isVisible }: AboutProps) {
     key: "aboutContents",
   });
 
+  const { opacity } = useFadeIn(isVisible);
+
   return (
     <div
       ref={innerRef}
-      className={`flex flex-col items-center lg:flex-row justify-between mb-36 transform transition duration-1000 ease-in-out pt-24 ${
-        isVisible ? "opacity-100" : "opacity-0"
-      }`}
+      className={`flex flex-col items-center lg:flex-row justify-between mb-36 transform transition duration-1000 ease-in-out pt-24 ${opacity}`}
     >
       <div className="lg:w-4/12">
         <Image

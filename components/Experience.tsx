@@ -8,6 +8,7 @@ import { getExperiencesAction } from "@/app/_actions";
 import { dateFormatter } from "@/utils/constants";
 import { Experience } from "@/models/Experience";
 import { fonts } from "@/utils/fonts";
+import { useFadeIn } from "@/utils/hooks/useFadeIn";
 
 const imgClassNames = [
   "rounded-xl",
@@ -21,12 +22,12 @@ export default function Experiences({ innerRef, isVisible }: ExperiencesProps) {
     key: "experiences",
   });
 
+  const { opacity } = useFadeIn(isVisible);
+
   return (
     <div
       ref={innerRef}
-      className={`mt-16 transform transition duration-1000 pt-16 ease-in-out ${
-        isVisible ? "opacity-100" : "opacity-0"
-      }`}
+      className={`mt-16 transform transition duration-1000 pt-16 ease-in-out ${opacity}`}
     >
       <h2 className={`text-light text-4xl ${fonts.title.className} mb-4`}>
         EXPERIENCE

@@ -9,6 +9,7 @@ import { fonts } from "@/utils/fonts";
 import { linkIcons } from "@/utils/links";
 import { Project } from "@/models/Project";
 import { getProjectsAction } from "@/app/_actions";
+import { useFadeIn } from "@/utils/hooks/useFadeIn";
 import { useDatabaseData } from "@/utils/hooks/useDatabaseData";
 
 export default function ProjectArchive() {
@@ -17,17 +18,11 @@ export default function ProjectArchive() {
     key: "projects",
   });
 
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    if (!isVisible) setIsVisible(true);
-  }, [isVisible]);
+  const { opacity } = useFadeIn(true);
 
   return (
     <div
-      className={`min-h-screen pb-16 pt-32 px-8 lg:px-48 lg:pt-16 flex flex-col transform transition duration-1000 ease-in-out ${
-        isVisible ? "opacity-100" : "opacity-0"
-      }`}
+      className={`min-h-screen pb-16 pt-32 px-8 lg:px-48 lg:pt-16 flex flex-col transform transition duration-1000 ease-in-out ${opacity}`}
     >
       <Link href="/">
         <b>Back to Homepage</b>
