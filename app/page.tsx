@@ -19,6 +19,18 @@ export default function Home() {
   const projectsRef = useRef<HTMLDivElement | null>(null);
   const experienceRef = useRef<HTMLDivElement | null>(null);
 
+  const homeIntersector = useIntersectionObserver(homeRef, {});
+  const isHomeVisible = homeIntersector?.isIntersecting;
+
+  const aboutIntersector = useIntersectionObserver(aboutRef, {});
+  const isAboutVisible = aboutIntersector?.isIntersecting;
+
+  const projectsIntesector = useIntersectionObserver(projectsRef, {});
+  const isProjectsVisible = projectsIntesector?.isIntersecting;
+
+  const experienceIntesector = useIntersectionObserver(experienceRef, {});
+  const isExperienceVisible = experienceIntesector?.isIntersecting;
+
   const isHeroTitleVisible = heroTitleEntry
     ? heroTitleEntry.isIntersecting
     : true;
@@ -33,6 +45,10 @@ export default function Home() {
           projectsRef={projectsRef}
           experienceRef={experienceRef}
           isHeroTitleVisible={isHeroTitleVisible}
+          isExperienceVisible={isExperienceVisible}
+          isProjectsVisible={isProjectsVisible}
+          isAboutVisible={isAboutVisible}
+          isHomeVisible={isHomeVisible}
         />
       </div>
       <div
@@ -46,6 +62,9 @@ export default function Home() {
           aboutRef={aboutRef}
           projectsRef={projectsRef}
           experienceRef={experienceRef}
+          isAboutVisible={isAboutVisible}
+          isExperienceVisible={isExperienceVisible}
+          isProjectsVisible={isProjectsVisible}
         />
       </div>
       <Footer innerRef={contactRef} />

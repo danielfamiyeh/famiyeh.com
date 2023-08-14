@@ -8,12 +8,8 @@ import { linkIcons } from "@/utils/links";
 import { Project } from "@/models/Project";
 import { getProjectsAction } from "@/app/_actions";
 import { useDatabaseData } from "@/utils/hooks/useDatabaseData";
-import { useIntersectionObserver } from "@/utils/hooks/useIntersectionObserver";
 
-export default function Projects({ innerRef }: ProjectsProps) {
-  const intersector = useIntersectionObserver(innerRef, {});
-  const isVisible = intersector?.isIntersecting;
-
+export default function Projects({ innerRef, isVisible }: ProjectsProps) {
   const projects = useDatabaseData<Project>({
     getAction: () => getProjectsAction({ limit: 2 }),
     key: "projects",
@@ -108,4 +104,5 @@ export default function Projects({ innerRef }: ProjectsProps) {
 
 type ProjectsProps = {
   innerRef: MutableRefObject<HTMLDivElement | null>;
+  isVisible?: boolean;
 };

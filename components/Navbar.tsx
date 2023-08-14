@@ -9,16 +9,23 @@ const pages = [
   { title: "Projects" },
 ];
 
-export default function Navbar({
-  isHeroTitleVisible,
-  homeRef,
-  aboutRef,
-  experienceRef,
-  projectsRef,
-  contactRef,
-}: NavbarProps) {
+export default function Navbar(props: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const refs = [homeRef, aboutRef, experienceRef, projectsRef, contactRef];
+  const refs = [
+    props.homeRef,
+    props.aboutRef,
+    props.experienceRef,
+    props.projectsRef,
+    props.contactRef,
+  ];
+
+  const visiblity = [
+    props.isHomeVisible,
+    props.isAboutVisible,
+    props.isExperienceVisible,
+    props.isProjectsVisible,
+  ];
+
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -35,7 +42,7 @@ export default function Navbar({
         <p className="m-0">Daniel</p>
         <b
           className={`transition-opacity ease-in-out duration-300 ${
-            isHeroTitleVisible ? "opacity-0" : "opacity-100"
+            props.isHeroTitleVisible ? "opacity-0" : "opacity-100"
           }`}
         >
           Famiyeh
@@ -77,6 +84,11 @@ export default function Navbar({
               }}
             >
               {title}
+              <div
+                className={`hidden lg:block bg-black h-px w-full transition transform duration-300 ease-in-out ${
+                  visiblity[i] ? "opacity-100" : "opacity-0"
+                }`}
+              />
             </li>
           ))}
         </ul>
@@ -92,4 +104,9 @@ type NavbarProps = {
   experienceRef: MutableRefObject<HTMLDivElement | null>;
   projectsRef: MutableRefObject<HTMLDivElement | null>;
   contactRef: MutableRefObject<HTMLDivElement | null>;
+
+  isExperienceVisible?: boolean;
+  isProjectsVisible?: boolean;
+  isAboutVisible?: boolean;
+  isHomeVisible?: boolean;
 };

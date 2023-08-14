@@ -1,13 +1,13 @@
 import Image from "next/image";
-import { MutableRefObject, useEffect, useState } from "react";
+import { MutableRefObject } from "react";
 
-import { useIntersectionObserver } from "@/utils/hooks/useIntersectionObserver";
+import LoadingSpinner from "./LoadingSpinner";
+
 import { useDatabaseData } from "@/utils/hooks/useDatabaseData";
 import { getExperiencesAction } from "@/app/_actions";
 import { dateFormatter } from "@/utils/constants";
 import { Experience } from "@/models/Experience";
 import { fonts } from "@/utils/fonts";
-import LoadingSpinner from "./LoadingSpinner";
 
 const imgClassNames = [
   "rounded-xl",
@@ -15,10 +15,7 @@ const imgClassNames = [
   "rounded-full",
 ];
 
-export default function Experiences({ innerRef }: ExperiencesProps) {
-  const intersector = useIntersectionObserver(innerRef, {});
-  const isVisible = intersector?.isIntersecting;
-
+export default function Experiences({ innerRef, isVisible }: ExperiencesProps) {
   const experiences = useDatabaseData<Experience>({
     getAction: getExperiencesAction,
     key: "experiences",
@@ -128,4 +125,5 @@ export default function Experiences({ innerRef }: ExperiencesProps) {
 
 type ExperiencesProps = {
   innerRef: MutableRefObject<HTMLDivElement | null>;
+  isVisible?: boolean;
 };
