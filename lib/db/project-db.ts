@@ -18,7 +18,12 @@ export async function getProjects(filters: ProjectFilters = {}): Promise<any> {
     const skip = (_filters.page - 1) * _filters.limit;
 
     const projects = (
-      await ProjectModel.find().skip(skip).limit(_filters.limit).lean().exec()
+      await ProjectModel.find()
+        .skip(skip)
+        .limit(_filters.limit)
+        .sort({ startDate: -1 })
+        .lean()
+        .exec()
     ).map((project: any) => ({ ...project, _id: project._id.toString() }));
 
     return { numResults: projects.length, projects };
