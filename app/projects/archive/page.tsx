@@ -1,16 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
-
-import LoadingSpinner from "@/components/LoadingSpinner";
 import Link from "@/components/Link";
+import LoadingSpinner from "@/components/LoadingSpinner";
 
-import { fonts } from "@/utils/fonts";
-import { linkIcons } from "@/utils/links";
-import { Project } from "@/models/Project";
+import { useDatabaseData } from "@/utils/hooks/useDatabaseData";
 import { getProjectsAction } from "@/app/_actions";
 import { useFadeIn } from "@/utils/hooks/useFadeIn";
-import { useDatabaseData } from "@/utils/hooks/useDatabaseData";
+import { Project } from "@/models/Project";
+import { linkIcons } from "@/utils/links";
+import { fonts } from "@/utils/fonts";
 
 export default function ProjectArchive() {
   const projects = useDatabaseData<Project>({
@@ -42,10 +40,10 @@ export default function ProjectArchive() {
         >
           <thead className="p-4 hidden lg:table-header-group bg-[#253956]">
             <tr>
-              <td className="py-4 px-4">Title</td>
+              <td className="py-4 px-4 rounded-tl-lg">Title</td>
               <td className="px-4">Description</td>
               <td className="px-4">Skills</td>
-              <td className="px-4">Links</td>
+              <td className="px-4 rounded-tr-lg">Links</td>
             </tr>
           </thead>
 
@@ -62,6 +60,9 @@ export default function ProjectArchive() {
                     <b>{project.title}</b>
                   </td>
                   <td className="px-4 py-2">{project.subtitle}</td>
+                  <div className="w-full h-px px-4 lg:hidden my-2">
+                    <div className="w-full h-full bg-[#eee]" />
+                  </div>
                   <td className="px-4 py-2">
                     {project.skills.map((skill) => (
                       <div

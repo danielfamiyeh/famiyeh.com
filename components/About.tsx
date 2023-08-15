@@ -4,8 +4,8 @@ import Image from "next/image";
 import { MutableRefObject } from "react";
 
 import { useDatabaseData } from "@/utils/hooks/useDatabaseData";
-import { useFadeIn } from "@/utils/hooks/useFadeIn";
 import { getAboutContentsAction } from "@/app/_actions";
+import { useFadeIn } from "@/utils/hooks/useFadeIn";
 import AboutContent from "@/models/AboutContent";
 import { fonts } from "@/utils/fonts";
 
@@ -41,7 +41,7 @@ export default function About({ innerRef, isVisible }: AboutProps) {
           ABOUT ME
         </h1>
         <hr className="mb-8" />
-        <div>
+        <div className="bg-[#253956] p-8 rounded-lg">
           {aboutContents?.data
             ? (aboutContents.data as AboutContent)?.content?.map((text) => (
                 <p key={text} className="text-white mt-2">

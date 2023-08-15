@@ -7,8 +7,8 @@ import { fonts } from "@/utils/fonts";
 import { linkIcons } from "@/utils/links";
 import { Project } from "@/models/Project";
 import { getProjectsAction } from "@/app/_actions";
-import { useDatabaseData } from "@/utils/hooks/useDatabaseData";
 import { useFadeIn } from "@/utils/hooks/useFadeIn";
+import { useDatabaseData } from "@/utils/hooks/useDatabaseData";
 
 export default function Projects({ innerRef, isVisible }: ProjectsProps) {
   const projects = useDatabaseData<Project>({
@@ -51,7 +51,7 @@ export default function Projects({ innerRef, isVisible }: ProjectsProps) {
                 >
                   <p className="m-0 text-2xl">{title}</p>
                   <small>{subtitle}</small>
-                  <hr className="my-4" />
+                  <div className="w-full h-px bg-[#eee] my-4" />
                   <ul className="flex flex-wrap justify-center">
                     {skills.map((skill: string) => (
                       <li

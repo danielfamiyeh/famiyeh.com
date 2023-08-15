@@ -5,10 +5,10 @@ import LoadingSpinner from "./LoadingSpinner";
 
 import { useDatabaseData } from "@/utils/hooks/useDatabaseData";
 import { getExperiencesAction } from "@/app/_actions";
+import { useFadeIn } from "@/utils/hooks/useFadeIn";
 import { dateFormatter } from "@/utils/constants";
 import { Experience } from "@/models/Experience";
 import { fonts } from "@/utils/fonts";
-import { useFadeIn } from "@/utils/hooks/useFadeIn";
 
 const imgClassNames = [
   "rounded-xl",
@@ -55,7 +55,7 @@ export default function Experiences({ innerRef, isVisible }: ExperiencesProps) {
             ) => (
               <li
                 key={`${employer}-${title}-employer`}
-                className="p-4 bg-[#253956] rounded-md mb-4 text-white select-none"
+                className="p-4 bg-[#253956] rounded-lg mb-4 text-white select-none"
               >
                 <div className={`${logoBg ? "py-4" : ""} lg:py-0`}>
                   <div className="flex flex-col items-center justify-center text-center lg:flex-row lg:text-left mb-4">

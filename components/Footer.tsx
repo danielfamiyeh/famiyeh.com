@@ -20,12 +20,18 @@ export default function Footer({ innerRef }: FooterProps) {
     >
       <div className="flex flex-wrap items-center justify-center mb-2">
         {contactLinks.map(({ url, site, Icon }) => (
-          <Link key={url} href={url} target="_blank" rel="noopener noreferrer">
+          <Link
+            className="mx-2"
+            key={url}
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {Icon ? (
               <Icon
                 className="hover:opacity-50 transform transition duration-300 ease-in-out"
-                height={50}
-                width={50}
+                height={36}
+                width={36}
               />
             ) : (
               site
