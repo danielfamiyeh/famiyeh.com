@@ -60,6 +60,9 @@ export default function ProjectArchive() {
                     <b>{project.title}</b>
                   </td>
                   <td className="px-4 py-2">{project.subtitle}</td>
+                  <div className="w-full h-px px-4 lg:hidden my-2">
+                    <div className="w-full h-full bg-[#eee]" />
+                  </div>
                   <td className="px-4 py-2">
                     {project.skills.map((skill) => (
                       <div
