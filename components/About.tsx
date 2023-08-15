@@ -22,7 +22,7 @@ export default function About({ innerRef, isVisible }: AboutProps) {
       ref={innerRef}
       className={`flex flex-col items-center lg:flex-row justify-between mb-36 transform transition duration-1000 ease-in-out pt-24 ${opacity}`}
     >
-      <div className="lg:w-4/12">
+      <div className="lg:w-4/12 flex items-center justify-center">
         <Image
           className="rounded-full mb-16 lg:mb-0 border-8"
           alt="Picture of Daniel Famiyeh"
