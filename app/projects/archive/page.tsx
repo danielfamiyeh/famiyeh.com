@@ -40,10 +40,10 @@ export default function ProjectArchive() {
         >
           <thead className="p-4 hidden lg:table-header-group bg-[#253956]">
             <tr>
-              <td className="py-4 px-4">Title</td>
+              <td className="py-4 px-4 rounded-tl-lg">Title</td>
               <td className="px-4">Description</td>
               <td className="px-4">Skills</td>
-              <td className="px-4">Links</td>
+              <td className="px-4 rounded-tr-lg">Links</td>
             </tr>
           </thead>
 
