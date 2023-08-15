@@ -1,4 +1,4 @@
 # famiyeh.com
 Bauhaus-style software portfolio website built with NextJS13, TailwindCSS and MongoDB in TypeScript
 
-![preview](https://github.com/danielfamiyeh/famiyeh.com/assets/58159259/a2e25aef-aa7a-46bc-97b8-3ec71ac2f3d4)
+![famiyeh-5lssk9rm8-danielfamiyeh vercel app_](https://github.com/danielfamiyeh/famiyeh.com/assets/58159259/3cdedb44-954b-46de-98ca-26acfad88aec)
