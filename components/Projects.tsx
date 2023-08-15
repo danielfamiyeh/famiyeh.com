@@ -7,8 +7,8 @@ import { fonts } from "@/utils/fonts";
 import { linkIcons } from "@/utils/links";
 import { Project } from "@/models/Project";
 import { getProjectsAction } from "@/app/_actions";
-import { useDatabaseData } from "@/utils/hooks/useDatabaseData";
 import { useFadeIn } from "@/utils/hooks/useFadeIn";
+import { useDatabaseData } from "@/utils/hooks/useDatabaseData";
 
 export default function Projects({ innerRef, isVisible }: ProjectsProps) {
   const projects = useDatabaseData<Project>({

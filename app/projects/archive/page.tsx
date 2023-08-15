@@ -1,16 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
-
-import LoadingSpinner from "@/components/LoadingSpinner";
 import Link from "@/components/Link";
+import LoadingSpinner from "@/components/LoadingSpinner";
 
-import { fonts } from "@/utils/fonts";
-import { linkIcons } from "@/utils/links";
-import { Project } from "@/models/Project";
+import { useDatabaseData } from "@/utils/hooks/useDatabaseData";
 import { getProjectsAction } from "@/app/_actions";
 import { useFadeIn } from "@/utils/hooks/useFadeIn";
-import { useDatabaseData } from "@/utils/hooks/useDatabaseData";
+import { Project } from "@/models/Project";
+import { linkIcons } from "@/utils/links";
+import { fonts } from "@/utils/fonts";
 
 export default function ProjectArchive() {
   const projects = useDatabaseData<Project>({

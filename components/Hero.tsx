@@ -3,8 +3,8 @@
 import { MutableRefObject, useRef } from "react";
 
 import { useIntersectionObserver } from "@/utils/hooks/useIntersectionObserver";
-import { fonts } from "@/utils/fonts";
 import { useFadeIn } from "@/utils/hooks/useFadeIn";
+import { fonts } from "@/utils/fonts";
 
 export default function Hero({ heroTitleRef }: HeroProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
