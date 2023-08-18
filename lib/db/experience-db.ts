@@ -23,6 +23,7 @@ export async function getExperiences(
       await ExperienceModel.find()
         .skip(skip)
         .limit(_filters.limit)
+        .sort({ startDate: -1 })
         .lean()
         .exec()
     ).map((experience: any) => ({
